@@ -1,5 +1,9 @@
 site_name: test
 
+nav:
+    - Index: index.md
+    - Code: index2.md
+
 theme:
     name: 'material'
     language: 'ja'

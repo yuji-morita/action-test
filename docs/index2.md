@@ -2,7 +2,8 @@
 
 edited
 
-[index2](index2.md)
+[index](index.md)
+
 
 ## あああ
 
