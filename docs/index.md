@@ -2,7 +2,7 @@
 
 edited
 
-[index2](index2.md)
+[index2](index2.md#いいい)
 
 ## あああ
 
