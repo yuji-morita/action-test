@@ -11,6 +11,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://yuji-morita.github.io/action-test/reference/</loc>
      <lastmod>2020-01-07</lastmod>
      <changefreq>daily</changefreq>
