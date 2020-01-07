@@ -1,17 +1,43 @@
-site_name: test
+site_name: adstir Integration Guide for Android
+
+site_url: https://yuji-morita.github.io/action-test
 
 nav:
+  - ガイド:
     - Index: index.md
-    - Code: index2.md
+    - Index2: index2.md
+  - リファレンス:
+    - Index: reference.md
 
 theme:
-    name: 'material'
-    language: 'ja'
+  name: 'material'
+  language: 'ja'
+  palette:
+    primary: 'white'
+    accent: 'white'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  feature:
+    tabs: true
+  custom_dir: 'custom_dir'
+  logo: 'img/favicon.ico'
+
+extra_css:
+  - 'css/custom.css'
 
 extra:
     language: 'jp'
 
 markdown_extensions:
-    - toc:
-        permalink: true
-        slugify: !!python/name:pymdownx.slugs.uslugify
+  - admonition
+  - footnotes
+  - codehilite
+  - meta
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences
+  - pymdownx.details
