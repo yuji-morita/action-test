@@ -1,0 +1,13 @@
+site_name: test
+
+theme:
+    name: 'material'
+    language: 'ja'
+
+extra:
+    language: 'jp'
+
+markdown_extensions:
+    - toc:
+        permalink: true
+        slugify: !!python/name:pymdownx.slugs.uslugify
