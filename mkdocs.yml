@@ -6,6 +6,8 @@ nav:
   - ガイド:
     - Index: index.md
     - Index2: index2.md
+    - バージョン:
+      - 1.0.0: /action-test/1.0.0
   - リファレンス:
     - Index: reference.md
 
