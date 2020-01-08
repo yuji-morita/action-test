@@ -14,4 +14,4 @@ do
     mkdocs build -d site/$tag
 done
 
-python3 version.py
+python3 ../version.py
