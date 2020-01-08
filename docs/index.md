@@ -1,6 +1,6 @@
 # index 
 
-edited
+version1.0
 
 [index2](index2.md#いいい)
 
