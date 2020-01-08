@@ -25,9 +25,9 @@
     color: hsl(0, 0%, 100%) !important;
 }
 
-.md-container {
+/* .md-container {
     background: whitesmoke;
-}
+} */
 
 .md-content {
     background: white;
@@ -55,7 +55,7 @@
 .md-nav--secondary {
     margin-left: 1rem;
     border-left: solid 3px #ef5350;
-    background: whitesmoke;
+    /* background: whitesmoke; */
 }
 
 
@@ -112,7 +112,7 @@
     .md-content {
         margin-left: 13.1rem;
         padding-bottom: 0.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .md-sidebar--secondary {
@@ -120,11 +120,23 @@
       }
 
       .md-sidebar--primary {
-        position: absolute;
+        /* position: absolute;
         width: 12.1rem;
         padding: 1.2rem 0;
         overflow: hidden;
-        background: white;
+        background: white; */
         border-right: solid 1px lightgray;
+    }
+
+    .md-sidebar--primary {
+        padding-top: 0;
+    }
+
+    .md-nav--primary {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        background: white;
     }
   }

@@ -4,10 +4,72 @@ site_url: https://yuji-morita.github.io/action-test
 
 nav:
   - ガイド:
-    - Index: index.md
-    - Index2: index2.md
-    - Index3: index3.md
-    - Index4: index4.md
+    - スタートガイド: index.md
+    - adstir: 
+        - はじめに: adstir/index.md
+        - 初期設定: 
+          - SDKの組み込み:
+            - CocoaPods: adstir/init/cocoapods.md
+            - 手動組み込み: adstir/init/manual_integration.md
+        - 対応ネットワーク: 
+          - 対応ネットワーク一覧: adstir/network/index.md
+          - AdColony: adstir/network/adcolony.md
+          - AdCorsa: adstir/network/adcorsa.md
+          - Amazon: adstir/network/amazon.md
+          - AppLovin: adstir/network/applovin.md
+          - imobile: adstir/network/imobile.md
+          - maio: adstir/network/maio.md
+          - Mobvista: adstir/network/mobvista.md
+          - MoPub: adstir/network/mopub.md
+          - nend: adstir/network/nend.md
+          - TapJoy: adstir/network/tapjoy.md
+          - TikTok: adstir/network/tiktok.md
+          - UnityAds: adstir/network/unityads.md
+          - Zucks: adstir/network/zucks.md
+  
+        - 広告の実装:
+          - バナー: adstir/ad/banner.md
+          - スワイプインタースティシャル: adstir/ad/swipe.md
+          - ネイティブ: 
+            - ネイティブライクバナー: adstir/ad/native/native_banner.md
+            - フルカスタマイズ: adstir/ad/native/custom.md
+            - ネイティブ動画: adstir/ad/native/native_video.md
+          - 動画リワード: adstir/ad/video.md
+          - 全画面インタースティシャル: adstir/ad/interstitial.md
+        - APIリファレンス: 
+          - 一覧: adstir/api/index.md
+          - バナー:
+            - AdstirMraidView: adstir/api/banner/AdstirMraidView-Class-Reference.md
+            - AdstirMraidViewDelegate: adstir/api/banner/AdstirMraidViewDelegate-Protocol-Reference.md
+          - スワイプインタースティシャル:
+            - AdstirFullscreenView: adstir/api/swipe/AdstirFullscreenView-Class-Reference.md
+          - ネイティブ:
+            - AdstirNativeAd: adstir/api/native/AdstirNativeAd-Class-Reference.md
+            - AdstirNativeAdDelegate: adstir/api/native/AdstirNativeAdDelegate-Protocol-Reference.md
+            - AdstirNativeAdResponse: adstir/api/native/AdstirNativeAdResponse-Class-Reference.md
+            - AdstirLoadImageDeledate: adstir/api/native/AdstirLoadImageDeledate-Protocol-Reference.md
+            - AdstirLoadSmallImageDeledate: adstir/api/native/AdstirLoadSmallImageDeledate-Protocol-Reference.md
+            - ネイティブ動画:
+              - AdstirNativeVideoAd: adstir/api/native/video/AdstirNativeVideoAd-Class-Reference.md
+              - AdstirNativeVideoView: adstir/api/native/video/AdstirNativeVideoView-Class-Reference.md
+              - AdstirNativeVideoViewDelegate: adstir/api/native/video/AdstirNativeVideoViewDelegate-Protocol-Reference.md
+          - 動画リワード/全画面インタースティシャルの初期化:
+            - AdstirVideoAds: adstir/api/AdstirVideoAds-Class-Reference.md
+          - 動画リワード:
+            - AdstirVideoReward: adstir/api/video/AdstirVideoReward-Class-Reference.md
+            - AdstirVideoRewardDelegate: adstir/api/video/AdstirVideoRewardDelegate-Protocol-Reference.md
+          - 全画面インタースティシャル:
+            - AdstirInterstitial: adstir/api/interstitial/AdstirInterstitial-Class-Reference.md
+            - AdstirInterstitialDelegate: adstir/api/interstitial/AdstirInterstitialDelegate-Protocol-Reference.md
+        - よくある質問: adstir/question.md
+    - AdMob: 
+        - はじめに: admob/index.md
+        - AdMobメディエーション: admob/network.md
+    - APS: 
+        - APSの初期設定: aps/init.md
+        - バナー: aps/banner.md
+        - インタースティシャル: aps/interstitial.md
+    - 変更履歴: changelog.md  
   - リファレンス:
     - Index: reference.md
 
