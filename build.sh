@@ -1,5 +1,4 @@
 #!/bin/bash
-cd `dirname $0`
 mkdir build
 cd build
 
@@ -14,4 +13,4 @@ do
     mkdocs build -d site/$tag
 done
 
-python3 ../version.py
+python3 ../../version.py
