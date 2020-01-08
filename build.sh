@@ -13,3 +13,5 @@ do
     git checkout refs/tags/$tag > /dev/null 2>&1
     mkdocs build -d site/$tag
 done
+
+python3 version.py
