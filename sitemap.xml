@@ -126,6 +126,56 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://yuji-morita.github.io/action-test/adstir/question/</loc>
+     <lastmod>2020-01-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://yuji-morita.github.io/action-test/admob/</loc>
+     <lastmod>2020-01-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://yuji-morita.github.io/action-test/admob/network/</loc>
+     <lastmod>2020-01-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://yuji-morita.github.io/action-test/aps/init/</loc>
+     <lastmod>2020-01-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://yuji-morita.github.io/action-test/aps/banner/</loc>
+     <lastmod>2020-01-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://yuji-morita.github.io/action-test/aps/interstitial/</loc>
+     <lastmod>2020-01-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://yuji-morita.github.io/action-test/changelog/</loc>
+     <lastmod>2020-01-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://yuji-morita.github.io/action-test/adstir/api/</loc>
      <lastmod>2020-01-08</lastmod>
      <changefreq>daily</changefreq>
@@ -207,61 +257,6 @@
     </url>
     <url>
      <loc>https://yuji-morita.github.io/action-test/adstir/api/interstitial/AdstirInterstitialDelegate-Protocol-Reference/</loc>
-     <lastmod>2020-01-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://yuji-morita.github.io/action-test/adstir/question/</loc>
-     <lastmod>2020-01-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://yuji-morita.github.io/action-test/admob/</loc>
-     <lastmod>2020-01-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://yuji-morita.github.io/action-test/admob/network/</loc>
-     <lastmod>2020-01-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://yuji-morita.github.io/action-test/aps/init/</loc>
-     <lastmod>2020-01-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://yuji-morita.github.io/action-test/aps/banner/</loc>
-     <lastmod>2020-01-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://yuji-morita.github.io/action-test/aps/interstitial/</loc>
-     <lastmod>2020-01-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://yuji-morita.github.io/action-test/changelog/</loc>
-     <lastmod>2020-01-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://yuji-morita.github.io/action-test/reference/</loc>
      <lastmod>2020-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
