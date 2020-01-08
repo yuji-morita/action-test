@@ -23,13 +23,13 @@ jobs:
         pip install GitPython
 
     - name: Build
-      run: ./build.sh
+      run: python3 build.py
 
     - name: Deploy
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./build/action-test/site
+        PUBLISH_DIR: ./build/site
         SCRIPT_MODE: true
       run: |
         wget https://raw.githubusercontent.com/peaceiris/actions-gh-pages/v2/entrypoint.sh
