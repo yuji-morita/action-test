@@ -1,29 +1,24 @@
 
+
 各広告には下記のネットワークSDKが対応しています。
 
 ネットワーク|対応OS|容量(KB)[^1]| バナー | スワイプインタースティシャル | ネイティブ | 動画リワード | 全画面インタースティシャル
 ---|:-:|:-:|:-:|:-:|:-:|:-:|:-:
-[AdColony](adcolony.md)|8.0〜| | - | - | - | ○ | -
-[AdCorsa](adcorsa.md)|8.0〜|280 | - | - | - | ○ | ○
-[AppLovin](applovin.md)|10.0〜|760| - | - | - | ○ | ○
-[imobile](imobile.md)|8.1〜| 110| - | - | - | - | ○
-[Maio](maio.md)|8.0〜|180 | - | - | - | ○ | ○
-[Mobvista](mobvista.md)|8.0〜|1880 | - | - | - | ○ | ○
-[MoPub](mopub.md)|8.0〜|760| ○ | ○ | ○ | ○ | ○
-[Nend](nend.md)|8.1〜|400 | - | - | - | ○ | ○
-[TapJoy](tapjoy.md)|9.0〜|400 | - | - | - | ○ | ○
-[TikTok](tiktok.md)|9.0〜|580| - | - | - | ○ | ○
-[UnityAds](unityads.md)|9.0〜[^2]:|250 | - | - | - | ○ | -
-[Zucks](zucks.md)|8.0〜|  150| - | ○ | - | - | -
-[AmazonAds](amazon.md)|8.0〜| 470 | ○ | - | - | - | -
-
-
-
-* 対応OSバージョンでない端末の場合、非対応のネットワークは配信されず、対応しているネットワークが配信されます。
-* ATS, Bitcode, IPv6については上記のネットワーク全て対応しております。
-* Xcode9未満をご利用の方は、営業担当者へご連絡いただくか、[お問い合わせ](https://ja.ad-stir.com/contact "お問い合わせ")ください。
-
+[AdColony](adcolony.md)|4.4〜| | - | - | - | ○ | -
+[AdCorsa](adcorsa.md)|4.4〜|170 | - | - | - | ○ | ○
+[AppLovin](applovin.md)|4.4〜|190| - | - | - | ○ | ○
+[imobile](imobile.md)|4.4〜|40 | - | - | - | - | ○
+[Maio](maio.md)|4.4〜|40 | - | - | - | ○ | ○
+[Mobvista](mobvista.md)|4.4〜|380 | - | - | - | ○ | ○
+[MoPub](mopub.md)|4.4〜|1160| ○ | ○ | ○ | ○ | ○
+[Nend](nend.md)|4.4〜|380 | - | - | - | ○ | ○
+[TapJoy](tapjoy.md)|4.4〜|280 | - | - | - | ○ | ○
+[UnityAds](unityads.md)|4.4〜|100 | - | - | - | ○ | -
+[Zucks](zucks.md)| 4.4〜| 40 | - | ○ | - | - | -
+[AmazonAds](amazon.md)| 4.4〜| 150 | ○ | - | - | - | -
+Appnext| 4.4〜| 170 | ○ | - | - | - | -
 
 [^1]: 容量は、対応提携ネットワークのSDKと、メディエーションアダプタを追加したときに増加する概算容量です。
 
-[^2]: UnityAds SDKを組み込んだアプリをiOS 9未満で起動するとクラッシュします。ご注意ください。
+
+

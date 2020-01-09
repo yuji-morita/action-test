@@ -9,7 +9,7 @@ nav:
         - はじめに: adstir/index.md
         - 初期設定: 
           - SDKの組み込み:
-            - CocoaPods: adstir/init/cocoapods.md
+            - Android Studioによる組み込み: adstir/init/android_studio_integration.md
             - 手動組み込み: adstir/init/manual_integration.md
         - 対応ネットワーク: 
           - 対応ネットワーク一覧: adstir/network/index.md
