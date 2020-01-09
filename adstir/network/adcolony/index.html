@@ -1481,12 +1481,12 @@
 <h3 id="手動組み込み">手動組み込み<a class="headerlink" href="#手動組み込み" title="Permanent link">&para;</a></h3>
 <h4 id="sdkの準備">SDKの準備<a class="headerlink" href="#sdkの準備" title="Permanent link">&para;</a></h4>
 <p>AdColonyのSDKは、VideoAdSDKBundledのパッケージに同梱されております。<br />
-作成された動画枠の<code>動画SDK (iOS)</code>より取得いただけます。</p>
+作成された動画枠の<code>動画SDK (Android / AAR形式)</code>より取得いただけます。</p>
 <h4 id="sdkの組み込み_1">SDKの組み込み<a class="headerlink" href="#sdkの組み込み_1" title="Permanent link">&para;</a></h4>
 <p><a href="../../init/manual_integration/">初期設定</a>の完了後、下記の手順で追加してください。</p>
 <ol>
-<li>File -&gt; New -&gt; New Module -&gt; Import .JAR/.AAR Package より<code>adcolony-x.x.x.aar</code>,<code>androidwebviewmediation-adapter-adcolony.aar</code>を追加します。</li>
-<li>File -&gt; Project Structure -&gt; app -&gt; Dependencies より<code>adcolony-x.x.x</code>,<code>androidwebviewmediation-adapter-adcolony</code>を追加します。</li>
+<li>File -&gt; New -&gt; New Module -&gt; Import .JAR/.AAR Package より<code>adcolony-x.x.x.aar</code>, <code>androidwebviewmediation-adapter-adcolony.aar</code>を追加します。</li>
+<li>File -&gt; Project Structure -&gt; Dependencies -&gt; app より<code>adcolony-x.x.x</code>, <code>androidwebviewmediation-adapter-adcolony</code>を追加します。</li>
 </ol>
 <h2 id="proguardの設定">ProGuardの設定<a class="headerlink" href="#proguardの設定" title="Permanent link">&para;</a></h2>
 <p>ProGuardを使用しているアプリにはproguard-rules.proに、下記の内容を追加してください。<br />
