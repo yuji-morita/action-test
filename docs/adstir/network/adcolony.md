@@ -26,13 +26,13 @@ dependencies {
 ### 手動組み込み
 #### SDKの準備
 AdColonyのSDKは、VideoAdSDKBundledのパッケージに同梱されております。  
-作成された動画枠の`動画SDK (iOS)`より取得いただけます。
+作成された動画枠の`動画SDK (Android / AAR形式)`より取得いただけます。
 
 #### SDKの組み込み
 [初期設定](../init/manual_integration.md)の完了後、下記の手順で追加してください。
 
-1. File -> New -> New Module -> Import .JAR/.AAR Package より`adcolony-x.x.x.aar`,`androidwebviewmediation-adapter-adcolony.aar`を追加します。
-2. File -> Project Structure -> app -> Dependencies より`adcolony-x.x.x`,`androidwebviewmediation-adapter-adcolony`を追加します。
+1. File -> New -> New Module -> Import .JAR/.AAR Package より`adcolony-x.x.x.aar`, `androidwebviewmediation-adapter-adcolony.aar`を追加します。
+2. File -> Project Structure -> Dependencies -> app より`adcolony-x.x.x`, `androidwebviewmediation-adapter-adcolony`を追加します。
 
 ## ProGuardの設定
 ProGuardを使用しているアプリにはproguard-rules.proに、下記の内容を追加してください。  
