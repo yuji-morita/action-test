@@ -48,8 +48,3 @@ ProGuardを使用しているアプリにはproguard-rules.proに、下記の内
     *;
 }
 ```
-
-
-
-
-

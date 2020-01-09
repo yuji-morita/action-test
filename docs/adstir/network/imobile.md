@@ -2,42 +2,44 @@
 
 ## 対応OS
 
-iOS 8.0以上
+Android 4.4以上
 
-## SDKの準備
+## SDKの組み込み
 
-IMobileのSDKは、VideoAdSDKBundledのパッケージに同梱されております。  
-作成された動画枠の`動画SDK (iOS)`より取得いただけます。
+### Android Studioによる組み込み(推奨)
+アプリケーションレベルのbuild.gradleにmavenリポジトリと依存関係を設定します。
 
-### CocoaPodsを利用して組み込む場合
+```groovy hl_lines="6 11"
+repositories {
+    maven { url 'http://cdnp.ad-stir.com/m2' }
+    maven { url 'https://imobile.github.io/adnw-sdk-android' }
+}
 
-CocoaPodsでの導入については[こちら](../init/cocoapods.md)をご覧ください。
+dependencies {
+    // 利用するadstirのSDKバージョンを設定します
+    def adstir_version = "x.x.x" 
+    implementation "com.ad-stir.webviewsdk:adstir-webviewsdk:${adstir_version}"
+    implementation "com.ad-stir.mediationadapter:adstir-mediationadapter-imobile:${adstir_version}"
+}
+```
 
-IMobileを利用される場合、Podfileに下記の記述を追記します。  
-pathについては、配置しているSDKへのパスに適宜変更してください。
+### 手動組み込み
+#### SDKの準備
+imobileのSDKは、VideoAdSDKBundledのパッケージに同梱されております。  
+作成された動画枠の`動画SDK (Android / AAR形式)`より取得いただけます。
+
+#### SDKの組み込み
+初期設定の[SDKの手動組み込み](../init/manual_integration.md)の完了後、下記の手順で追加してください。
+
+1. File -> New -> New Module -> Import .JAR/.AAR Package より`imobileSdkAds.jar`, `androidwebviewmediation-adapter-imobile.aar`を追加します。
+2. File -> Project Structure -> Dependencies -> app より`imobileSdkAds`, `androidwebviewmediation-adapter-imobile`を追加します。
+
+## ProGuardの設定
+ProGuardを使用しているアプリにはproguard-rules.proに、下記の内容を追加してください。  
+この記述が無い場合、adstirの機能を正常に利用することができません。
 
 ```
-pod 'AdStir-Ads-SDK-VideoAdSDKBundled/IMobile', :path => 'AdstirAdsSdkiOS-X.X.X-VideoAdSDKBundled'
+-keep class jp.co.imobile.android.** {*;}
+-keep interface jp.co.imobile.android.** {*;}
+-dontwarn jp.co.imobile.android.**
 ```
-
-### CocoaPodsを利用せず組み込む場合
-
-#### プロジェクトへのSDKの追加
-
-1. `IMobile`フォルダを、プロジェクト内の任意の箇所にドラッグ&ドロップします。
-1. `Copy items if needed`にチェックを入れます。
-1. `Add to targets`欄で、`IMobile`を利用するすべてのターゲットにチェックを入れます。
-1. `Finish`をクリックします。
-
-#### 依存Framework/Libraryの追加
-
-名前|ステータス
-----|----
-SystemConfiguration.framework|Required
-CoreLocation.framework|Required
-
-## ユーザデータアクセス許可に関する設定
-
-IMobileでは`CoreLocation.framework`を利用していますので、
-[こちら](../info/user_data.md)を参考に設定を行ってください。
-

@@ -15,7 +15,6 @@ nav:
           - 対応ネットワーク一覧: adstir/network/index.md
           - AdColony: adstir/network/adcolony.md
           - AdCorsa: adstir/network/adcorsa.md
-          - Amazon: adstir/network/amazon.md
           - AppLovin: adstir/network/applovin.md
           - imobile: adstir/network/imobile.md
           - maio: adstir/network/maio.md
@@ -23,7 +22,6 @@ nav:
           - MoPub: adstir/network/mopub.md
           - nend: adstir/network/nend.md
           - TapJoy: adstir/network/tapjoy.md
-          - TikTok: adstir/network/tiktok.md
           - UnityAds: adstir/network/unityads.md
           - Zucks: adstir/network/zucks.md
   
@@ -91,6 +89,7 @@ extra_css:
 
 extra:
     language: 'jp'
+    macro_value: 100
 
 markdown_extensions:
   - admonition
@@ -104,3 +103,7 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.superfences
   - pymdownx.details
+
+plugins:
+  - search
+  - markdownextradata: {}

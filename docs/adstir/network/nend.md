@@ -1,37 +1,56 @@
 # nend広告の導入
 
 ## 対応OS
-iOS 8.1以降
 
-## SDKの準備
-NendのSDKは、VideoAdSDKBundledのパッケージに同梱されております。  
-作成された動画枠の`動画SDK (iOS)`より取得いただけます。
+Android 4.4以上
 
-### CocoaPodsを利用して組み込む場合
+## SDKの組み込み
 
-CocoaPodsでの導入については[こちら](../init/cocoapods.md)をご覧ください。
+### Android Studioによる組み込み(推奨)
+アプリケーションレベルのbuild.gradleにmavenリポジトリと依存関係を設定します。
 
-Nendを利用される場合、Podfileに下記の記述を追記します。  
-pathについては、配置しているSDKへのパスに適宜変更してください。
+```groovy hl_lines="6 16"
+repositories {
+    maven { url 'http://cdnp.ad-stir.com/m2' }
+    maven { url 'http://fan-adn.github.io/nendSDK-Android-lib/library' }
+}
+
+dependencies {
+    // 利用するadstirのSDKバージョンを設定します
+    def adstir_version = "x.x.x" 
+    implementation "com.ad-stir.webviewsdk:adstir-webviewsdk:${adstir_version}"
+    implementation "com.ad-stir.mediationadapter:adstir-mediationadapter-nend:${adstir_version}"
+    // ご利用されているライブラリが競合した際は下記のバージョンをご利用されているライブラリのバージョンへ書き換えてください。
+    // configurations.all {
+    //     resolutionStrategy.force "androidx.legacy:legacy-support-v4:x.x.x"
+    //     resolutionStrategy.force "androidx.constraintlayout:constraintlayout:x.x.x"
+    // }
+}
+```
+
+### 手動組み込み
+#### SDKの準備
+nendのSDKは、VideoAdSDKBundledのパッケージに同梱されております。  
+作成された動画枠の`動画SDK (Android / AAR形式)`より取得いただけます。
+
+#### SDKの組み込み
+初期設定の[SDKの手動組み込み](../init/manual_integration.md)の完了後、下記の手順で追加してください。
+
+1. File -> New -> New Module -> Import .JAR/.AAR Package より`nendSDK-x.x.x.aar`, `androidwebviewmediation-adapter-nend.aar`を追加します。
+2. File -> Project Structure -> Dependencies -> app より`nendSDK-x.x.x`, `androidwebviewmediation-adapter-nend`を追加します。
+3. アプリケーションレベルのbuild.gradleに依存関係を設定します。
+
+```groovy hl_lines="1 4"
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0' // androidx.appcompatが定義済みの場合は不要
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}
+```
+## ProGuardの設定
+ProGuardを使用しているアプリにはproguard-rules.proに、下記の内容を追加してください。  
+この記述が無い場合、adstirの機能を正常に利用することができません。
 
 ```
-pod 'AdStir-Ads-SDK-VideoAdSDKBundled/Nend', :path => 'AdstirAdsSdkiOS-X.X.X-VideoAdSDKBundled'
+-keep class net.nend.** {*;}
+-dontwarn net.nend.**
 ```
-
-### CocoaPodsを利用せず組み込む場合
-
-#### プロジェクトへのSDKの追加
-1. `Nend`フォルダを、プロジェクト内の任意の箇所にドラッグ&ドロップします。
-1. `Copy items if needed`にチェックを入れます。
-1. `Add to targets`欄で、`Nend`を利用するすべてのターゲットにチェックを入れます。
-1. `Finish`をクリックします。
-
-#### 依存Framework/Libraryの追加
-名前|ステータス
-----|----
-Security.framework|Required
-ImageIO.framework|Required
-SafariServices.framework|Required
-WebKit.framework|Optional
-UIKit.framework|Optional
-libz.tbd|Required

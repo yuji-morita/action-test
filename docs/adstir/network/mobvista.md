@@ -2,51 +2,64 @@
 
 ## 対応OS
 
-iOS 8.0以上。
-iPadOSには配信されません。
+Android 4.4以上
 
-## SDKの準備
+## SDKの組み込み
 
-MobvistaのSDKは、VideoAdSDKBundledのパッケージに同梱されております。
-作成された動画枠の`動画SDK (iOS)`より取得いただけます。
+### Android Studioによる組み込み(推奨)
+アプリケーションレベルのbuild.gradleにmavenリポジトリと依存関係を設定します。
 
-### CocoaPodsを利用して組み込む場合
+```groovy hl_lines="5 10"
+repositories {
+    maven { url 'http://cdnp.ad-stir.com/m2' }
+}
 
-CocoaPodsでの導入については[こちら](../init/cocoapods.md)をご覧ください。
+dependencies {
+    // 利用するadstirのSDKバージョンを設定します
+    def adstir_version = "x.x.x" 
+    implementation "com.ad-stir.webviewsdk:adstir-webviewsdk:${adstir_version}"
+    implementation "com.ad-stir.mediationadapter:adstir-mediationadapter-mobvista:${adstir_version}"
+}
+```
 
-Mobvistaを利用される場合、Podfileに下記の記述を追記します。  
-pathについては、配置しているSDKへのパスに適宜変更してください。
+### 手動組み込み
+#### SDKの準備
+MobvistaのSDKは、VideoAdSDKBundledのパッケージに同梱されております。  
+作成された動画枠の`動画SDK (Android / AAR形式)`より取得いただけます。
+
+#### SDKの組み込み
+初期設定の[SDKの手動組み込み](../init/manual_integration.md)の完了後、下記の手順で追加してください。
+
+1. File -> New -> New Module -> Import .JAR/.AAR Package より以下のファイルを追加します。
+    * `mintegral_common.aar`
+    * `mintegral_mtgjscommon.aar`
+    * `mintegral_playercommon.aar`
+    * `mintegral_reward.aar`
+    * `mintegral_videocommon.aar`
+    * `mintegral_videojs.aar`
+    * `androidwebviewmediation-adapter-mobvista.aar`
+1. File -> Project Structure -> app -> Dependencies より以下を追加します。
+    * `mintegral_common`
+    * `mintegral_mtgjscommon.aar`
+    * `mintegral_playercommon`
+    * `mintegral_reward`
+    * `mintegral_videocommon`
+    * `mintegral_videojs`
+    * `androidwebviewmediation-adapter-mobvista`
+
+
+## ProGuardの設定
+ProGuardを使用しているアプリにはproguard-rules.proに、下記の内容を追加してください。  
+この記述が無い場合、adstirの機能を正常に利用することができません。
 
 ```
-pod 'AdStir-Ads-SDK-VideoAdSDKBundled/Mobvista', :path => 'AdstirAdsSdkiOS-X.X.X-VideoAdSDKBundled'
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.mintegral.** {*; }  
+-keep interface com.mintegral.** {*; }  
+-keep class android.support.v4.** { *; }  
+-dontwarn com.mintegral.**
+-keep class **.R$* { public static final int mintegral*; }
+-keep class com.alphab.** {*; }
+-keep interface com.alphab.** {*; }
 ```
-
-### CocoaPodsを利用せず組み込む場合
-
-#### プロジェクトへのSDKの追加
-
-1. `Mobvista`フォルダを、プロジェクト内の任意の箇所にドラッグ&ドロップします。
-1. `Copy items if needed`にチェックを入れます。
-1. `Add to targets`欄で、`Mobvista`を利用するすべてのターゲットにチェックを入れます。
-1. `Finish`をクリックします。
-
-#### 依存Framework/Libraryの追加
-名前|ステータス
-----|----
-CoreGraphics.framework|Required
-Foundation.framework|Required
-UIKit.framework|Required
-StoreKit.framework|Required
-CoreLocation.framework|Required
-MobileCoreServices.framework|Required
-Accelerate.framework|Required
-WebKit.framework|Required
-libsqlite3.tbd|Required
-libz.tbd|Required
-
-## ユーザデータアクセス許可に関する設定
-
-Mobvistaでは`CoreLocation.framework`を利用していますので、
-[こちら](../info/user_data.md)を参考に設定を行ってください。
-
-

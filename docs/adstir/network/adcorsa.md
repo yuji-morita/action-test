@@ -1,42 +1,45 @@
 # AdCorsa広告の導入
 
 ## 対応OS
+Android 4.4以上
 
-iOS 8.0以上
+## SDKの組み込み
 
-## SDKの準備
+### Android Studioによる組み込み(推奨)
+アプリケーションレベルのbuild.gradleにmavenリポジトリと依存関係を設定します。
 
-AdCorsaのSDKは、VideoAdSDKBundledのパッケージに同梱されております。
-作成された動画枠の`動画SDK (iOS)`より取得いただけます。
+```groovy hl_lines="6 11"
+repositories {
+    maven { url 'http://cdnp.ad-stir.com/m2' }
+    maven { url 'https://github.com/glossom-dev/GlossomAds-Android/raw/master' }
+}
 
-### CocoaPodsを利用して組み込む場合
+dependencies {
+    // 利用するadstirのSDKバージョンを設定します
+    def adstir_version = "x.x.x" 
+    implementation "com.ad-stir.webviewsdk:adstir-webviewsdk:${adstir_version}"
+    implementation "com.ad-stir.mediationadapter:adstir-mediationadapter-adcorsa:${adstir_version}"
+}
+```
 
-CocoaPodsでの導入については[こちら](../init/cocoapods.md)をご覧ください。
+### 手動組み込み
+#### SDKの準備
+AdCorsaのSDKは、VideoAdSDKBundledのパッケージに同梱されております。  
+作成された動画枠の`動画SDK (Android / AAR形式)`より取得いただけます。
 
-AdCorsaを利用される場合、Podfileに下記の記述を追記します。  
-pathについては、配置しているSDKへのパスに適宜変更してください。
+#### SDKの組み込み
+初期設定の[SDKの手動組み込み](../init/manual_integration.md)の完了後、下記の手順で追加してください。
+
+1. File -> New -> New Module -> Import .JAR/.AAR Package より`glossom-ads-android-x.x.x.aar`, `androidwebviewmediation-adapter-adcorsa.aar`を追加します。
+2. File -> Project Structure -> Dependencies -> app より`glossom-ads-android-x.x.x`, `androidwebviewmediation-adapter-adcorsa`を追加します。
+
+
+## ProGuardの設定
+ProGuardを使用しているアプリにはproguard-rules.proに、下記の内容を追加してください。  
+この記述が無い場合、adstirの機能を正常に利用することができません。
 
 ```
-pod 'AdStir-Ads-SDK-VideoAdSDKBundled/AdCorsa', :path => 'AdstirAdsSdkiOS-X.X.X-VideoAdSDKBundled'
+-keep interface com.glossomads.**
+-keep class com.glossomads.** { *; }
+-dontwarn com.glossomads.**
 ```
-
-### CocoaPodsを利用せず組み込む場合
-
-#### プロジェクトへのSDKの追加
-
-1. `AdCorsa`フォルダを、プロジェクト内の任意の箇所にドラッグ&ドロップします。
-1. `Copy items if needed`にチェックを入れます。
-1. `Add to targets`欄で、`AdCorsa`を利用するすべてのターゲットにチェックを入れます。
-1. `Finish`をクリックします。
-
-#### 依存Framework/Libraryの追加
-
-名前|ステータス
-----|----
-CoreGraphics.framework|Required
-MediaPlayer.framework|Required
-StoreKit.framework|Required
-SystemConfiguration.framework|Required
-WebKit.framework|Required
-UIKit.framework|Required
-SafariServices.framework|Required
