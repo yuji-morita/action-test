@@ -1,0 +1,1542 @@
+
+
+
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://yuji-morita.github.io/action-test/adstir/network/nend/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>nend - adstir Integration Guide for Android</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="white">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#nend広告の導入" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://yuji-morita.github.io/action-test" title="adstir Integration Guide for Android" aria-label="adstir Integration Guide for Android" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../../img/favicon.ico" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+
+            adstir Integration Guide for Android
+
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../.." class="md-tabs__link md-tabs__link--active">
+          ガイド
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../api/" class="md-tabs__link">
+          APIリファレンス
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://yuji-morita.github.io/action-test" title="adstir Integration Guide for Android" class="md-nav__button md-logo">
+      
+        <img src="../../../img/favicon.ico" width="48" height="48">
+      
+    </a>
+    adstir Integration Guide for Android
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      ガイド
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        ガイド
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="スタートガイド" class="md-nav__link">
+      スタートガイド
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
+    
+    <label class="md-nav__link" for="nav-1-2">
+      adstir
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        adstir
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="はじめに" class="md-nav__link">
+      はじめに
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-2" type="checkbox" id="nav-1-2-2">
+    
+    <label class="md-nav__link" for="nav-1-2-2">
+      初期設定
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-2">
+        初期設定
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-2-1" type="checkbox" id="nav-1-2-2-1">
+    
+    <label class="md-nav__link" for="nav-1-2-2-1">
+      SDKの組み込み
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-1-2-2-1">
+        SDKの組み込み
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../init/android_studio_integration/" title="Android Studioによる組み込み" class="md-nav__link">
+      Android Studioによる組み込み
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../init/manual_integration/" title="手動組み込み" class="md-nav__link">
+      手動組み込み
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-3" type="checkbox" id="nav-1-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-1-2-3">
+      対応ネットワーク
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-3">
+        対応ネットワーク
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="対応ネットワーク一覧" class="md-nav__link">
+      対応ネットワーク一覧
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../adcolony/" title="AdColony" class="md-nav__link">
+      AdColony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../adcorsa/" title="AdCorsa" class="md-nav__link">
+      AdCorsa
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../applovin/" title="AppLovin" class="md-nav__link">
+      AppLovin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../imobile/" title="imobile" class="md-nav__link">
+      imobile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../maio/" title="maio" class="md-nav__link">
+      maio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mobvista/" title="Mobvista" class="md-nav__link">
+      Mobvista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mopub/" title="MoPub" class="md-nav__link">
+      MoPub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        nend
+      </label>
+    
+    <a href="./" title="nend" class="md-nav__link md-nav__link--active">
+      nend
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#対応os" class="md-nav__link">
+    対応OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sdkの組み込み" class="md-nav__link">
+    SDKの組み込み
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-studioによる組み込み推奨" class="md-nav__link">
+    Android Studioによる組み込み(推奨)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#手動組み込み" class="md-nav__link">
+    手動組み込み
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdkの準備" class="md-nav__link">
+    SDKの準備
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdkの組み込み_1" class="md-nav__link">
+    SDKの組み込み
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proguardの設定" class="md-nav__link">
+    ProGuardの設定
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tapjoy/" title="TapJoy" class="md-nav__link">
+      TapJoy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unityads/" title="UnityAds" class="md-nav__link">
+      UnityAds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../zucks/" title="Zucks" class="md-nav__link">
+      Zucks
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4">
+    
+    <label class="md-nav__link" for="nav-1-2-4">
+      広告の実装
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-4">
+        広告の実装
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/banner/" title="バナー" class="md-nav__link">
+      バナー
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/swipe/" title="スワイプインタースティシャル" class="md-nav__link">
+      スワイプインタースティシャル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4-3" type="checkbox" id="nav-1-2-4-3">
+    
+    <label class="md-nav__link" for="nav-1-2-4-3">
+      ネイティブ
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-1-2-4-3">
+        ネイティブ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/native/native_banner/" title="ネイティブライクバナー" class="md-nav__link">
+      ネイティブライクバナー
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/native/custom/" title="フルカスタマイズ" class="md-nav__link">
+      フルカスタマイズ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/native/native_video/" title="ネイティブ動画" class="md-nav__link">
+      ネイティブ動画
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/video/" title="動画リワード" class="md-nav__link">
+      動画リワード
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/interstitial/" title="全画面インタースティシャル" class="md-nav__link">
+      全画面インタースティシャル
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../question/" title="よくある質問" class="md-nav__link">
+      よくある質問
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      AdMob
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        AdMob
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../admob/" title="はじめに" class="md-nav__link">
+      はじめに
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../admob/network/" title="AdMobメディエーション" class="md-nav__link">
+      AdMobメディエーション
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
+    
+    <label class="md-nav__link" for="nav-1-4">
+      APS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-4">
+        APS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aps/init/" title="APSの初期設定" class="md-nav__link">
+      APSの初期設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aps/banner/" title="バナー" class="md-nav__link">
+      バナー
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aps/interstitial/" title="インタースティシャル" class="md-nav__link">
+      インタースティシャル
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../changelog/" title="変更履歴" class="md-nav__link">
+      変更履歴
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-6" type="checkbox" id="nav-1-6">
+    
+    <label class="md-nav__link" for="nav-1-6">
+      バージョン
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-6">
+        バージョン
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/action-test/3.0.0" title="3.0.0" class="md-nav__link">
+      3.0.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/action-test/2.0.0" title="2.0.0" class="md-nav__link">
+      2.0.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/action-test/1.0.0" title="1.0.0" class="md-nav__link">
+      1.0.0
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      APIリファレンス
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        APIリファレンス
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/" title="一覧" class="md-nav__link">
+      一覧
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      バナー
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        バナー
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/banner/AdstirMraidView-Class-Reference/" title="AdstirMraidView" class="md-nav__link">
+      AdstirMraidView
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/banner/AdstirMraidViewDelegate-Protocol-Reference/" title="AdstirMraidViewDelegate" class="md-nav__link">
+      AdstirMraidViewDelegate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      スワイプインタースティシャル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        スワイプインタースティシャル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/swipe/AdstirFullscreenView-Class-Reference/" title="AdstirFullscreenView" class="md-nav__link">
+      AdstirFullscreenView
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      ネイティブ
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        ネイティブ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/native/AdstirNativeAd-Class-Reference/" title="AdstirNativeAd" class="md-nav__link">
+      AdstirNativeAd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/native/AdstirNativeAdDelegate-Protocol-Reference/" title="AdstirNativeAdDelegate" class="md-nav__link">
+      AdstirNativeAdDelegate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/native/AdstirNativeAdResponse-Class-Reference/" title="AdstirNativeAdResponse" class="md-nav__link">
+      AdstirNativeAdResponse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/native/AdstirLoadImageDeledate-Protocol-Reference/" title="AdstirLoadImageDeledate" class="md-nav__link">
+      AdstirLoadImageDeledate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/native/AdstirLoadSmallImageDeledate-Protocol-Reference/" title="AdstirLoadSmallImageDeledate" class="md-nav__link">
+      AdstirLoadSmallImageDeledate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-6" type="checkbox" id="nav-2-4-6">
+    
+    <label class="md-nav__link" for="nav-2-4-6">
+      ネイティブ動画
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-6">
+        ネイティブ動画
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/native/video/AdstirNativeVideoAd-Class-Reference/" title="AdstirNativeVideoAd" class="md-nav__link">
+      AdstirNativeVideoAd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/native/video/AdstirNativeVideoView-Class-Reference/" title="AdstirNativeVideoView" class="md-nav__link">
+      AdstirNativeVideoView
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/native/video/AdstirNativeVideoViewDelegate-Protocol-Reference/" title="AdstirNativeVideoViewDelegate" class="md-nav__link">
+      AdstirNativeVideoViewDelegate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      動画リワード/全画面インタースティシャルの初期化
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        動画リワード/全画面インタースティシャルの初期化
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/AdstirVideoAds-Class-Reference/" title="AdstirVideoAds" class="md-nav__link">
+      AdstirVideoAds
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/video/AdstirVideoReward-Class-Reference/" title="AdstirVideoReward" class="md-nav__link">
+      AdstirVideoReward
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/video/AdstirVideoRewardDelegate-Protocol-Reference/" title="AdstirVideoRewardDelegate" class="md-nav__link">
+      AdstirVideoRewardDelegate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      全画面インタースティシャル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        全画面インタースティシャル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/interstitial/AdstirInterstitial-Class-Reference/" title="AdstirInterstitial" class="md-nav__link">
+      AdstirInterstitial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/interstitial/AdstirInterstitialDelegate-Protocol-Reference/" title="AdstirInterstitialDelegate" class="md-nav__link">
+      AdstirInterstitialDelegate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#対応os" class="md-nav__link">
+    対応OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sdkの組み込み" class="md-nav__link">
+    SDKの組み込み
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-studioによる組み込み推奨" class="md-nav__link">
+    Android Studioによる組み込み(推奨)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#手動組み込み" class="md-nav__link">
+    手動組み込み
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdkの準備" class="md-nav__link">
+    SDKの準備
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdkの組み込み_1" class="md-nav__link">
+    SDKの組み込み
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proguardの設定" class="md-nav__link">
+    ProGuardの設定
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="nend広告の導入">nend広告の導入<a class="headerlink" href="#nend広告の導入" title="Permanent link">&para;</a></h1>
+<h2 id="対応os">対応OS<a class="headerlink" href="#対応os" title="Permanent link">&para;</a></h2>
+<p>Android 4.4以上</p>
+<h2 id="sdkの組み込み">SDKの組み込み<a class="headerlink" href="#sdkの組み込み" title="Permanent link">&para;</a></h2>
+<h3 id="android-studioによる組み込み推奨">Android Studioによる組み込み(推奨)<a class="headerlink" href="#android-studioによる組み込み推奨" title="Permanent link">&para;</a></h3>
+<p>アプリケーションレベルのbuild.gradleにmavenリポジトリと依存関係を設定します。</p>
+<div class="codehilite"><pre><span></span><span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;http://cdnp.ad-stir.com/m2&#39;</span> <span class="o">}</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;http://fan-adn.github.io/nendSDK-Android-lib/library&#39;</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="hll"><span class="n">dependencies</span> <span class="o">{</span>
+</span>    <span class="c1">// 利用するadstirのSDKバージョンを設定します</span>
+    <span class="kt">def</span> <span class="n">adstir_version</span> <span class="o">=</span> <span class="s2">&quot;x.x.x&quot;</span> 
+    <span class="n">implementation</span> <span class="s2">&quot;com.ad-stir.webviewsdk:adstir-webviewsdk:${adstir_version}&quot;</span>
+    <span class="n">implementation</span> <span class="s2">&quot;com.ad-stir.mediationadapter:adstir-mediationadapter-nend:${adstir_version}&quot;</span>
+    <span class="c1">// ご利用されているライブラリが競合した際は下記のバージョンをご利用されているライブラリのバージョンへ書き換えてください。</span>
+    <span class="c1">// configurations.all {</span>
+    <span class="c1">//     resolutionStrategy.force &quot;androidx.legacy:legacy-support-v4:x.x.x&quot;</span>
+    <span class="c1">//     resolutionStrategy.force &quot;androidx.constraintlayout:constraintlayout:x.x.x&quot;</span>
+    <span class="c1">// }</span>
+<span class="hll"><span class="o">}</span>
+</span></pre></div>
+
+<h3 id="手動組み込み">手動組み込み<a class="headerlink" href="#手動組み込み" title="Permanent link">&para;</a></h3>
+<h4 id="sdkの準備">SDKの準備<a class="headerlink" href="#sdkの準備" title="Permanent link">&para;</a></h4>
+<p>nendのSDKは、VideoAdSDKBundledのパッケージに同梱されております。<br />
+作成された動画枠の<code>動画SDK (Android / AAR形式)</code>より取得いただけます。</p>
+<h4 id="sdkの組み込み_1">SDKの組み込み<a class="headerlink" href="#sdkの組み込み_1" title="Permanent link">&para;</a></h4>
+<p>初期設定の<a href="../../init/manual_integration/">SDKの手動組み込み</a>の完了後、下記の手順で追加してください。</p>
+<ol>
+<li>File -&gt; New -&gt; New Module -&gt; Import .JAR/.AAR Package より<code>nendSDK-x.x.x.aar</code>, <code>androidwebviewmediation-adapter-nend.aar</code>を追加します。</li>
+<li>File -&gt; Project Structure -&gt; Dependencies -&gt; app より<code>nendSDK-x.x.x</code>, <code>androidwebviewmediation-adapter-nend</code>を追加します。</li>
+<li>アプリケーションレベルのbuild.gradleに依存関係を設定します。</li>
+</ol>
+<div class="codehilite"><pre><span></span><span class="hll"><span class="n">dependencies</span> <span class="o">{</span>
+</span>    <span class="n">implementation</span> <span class="s1">&#39;androidx.legacy:legacy-support-v4:1.0.0&#39;</span> <span class="c1">// androidx.appcompatが定義済みの場合は不要</span>
+    <span class="n">implementation</span> <span class="s1">&#39;androidx.constraintlayout:constraintlayout:1.1.3&#39;</span>
+<span class="hll"><span class="o">}</span>
+</span></pre></div>
+
+<h2 id="proguardの設定">ProGuardの設定<a class="headerlink" href="#proguardの設定" title="Permanent link">&para;</a></h2>
+<p>ProGuardを使用しているアプリにはproguard-rules.proに、下記の内容を追加してください。<br />
+この記述が無い場合、adstirの機能を正常に利用することができません。</p>
+<div class="codehilite"><pre><span></span><span class="err">-keep class net.nend.** {*;}</span>
+<span class="err">-dontwarn net.nend.**</span>
+</pre></div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.808e90bb.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
