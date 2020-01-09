@@ -321,8 +321,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../cocoapods/" title="CocoaPods" class="md-nav__link">
-      CocoaPods
+    <a href="../android_studio_integration/" title="Android Studioによる組み込み" class="md-nav__link">
+      Android Studioによる組み込み
     </a>
   </li>
 
@@ -371,38 +371,12 @@
     プロジェクトへのadstir SDKの追加
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#対応提携ネットワークのライブラリの追加" class="md-nav__link">
-    対応提携ネットワークのライブラリの追加
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ビルド設定の変更" class="md-nav__link">
-    ビルド設定の変更
-  </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#依存frameworklibraryの追加" class="md-nav__link">
-    依存Framework/Libraryの追加
+      
+        <li class="md-nav__item">
+  <a href="#google-play-servicesの追加" class="md-nav__link">
+    Google Play Servicesの追加
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1381,38 +1355,12 @@
     プロジェクトへのadstir SDKの追加
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#対応提携ネットワークのライブラリの追加" class="md-nav__link">
-    対応提携ネットワークのライブラリの追加
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ビルド設定の変更" class="md-nav__link">
-    ビルド設定の変更
-  </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#依存frameworklibraryの追加" class="md-nav__link">
-    依存Framework/Libraryの追加
+      
+        <li class="md-nav__item">
+  <a href="#google-play-servicesの追加" class="md-nav__link">
+    Google Play Servicesの追加
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1438,139 +1386,32 @@
 <ol>
 <li>
 <p>管理画面にログインして、対象の枠の「タグ/SDK」を選択してください。
-<img alt="tutorial1" src="../Adstir_sdk_tutorial_01.png" /></p>
+<img alt="" src="../Adstir_sdk_tutorial_01.png" /></p>
 </li>
 <li>
 <p>「SDKダウンロード」より「AdStir SDK(iOS)」をダウンロードしてください。</p>
 </li>
 <li>
 <p>「SDKパラメータ」より「メディアID」および「枠No」を取得してください。
-<img alt="tutorial1" src="../Adstir_sdk_tutorial_02.png" /></p>
+<img alt="" src="../Adstir_sdk_tutorial_02.png" /></p>
 </li>
 </ol>
 <h2 id="プロジェクトへのadstir-sdkの追加">プロジェクトへのadstir SDKの追加<a class="headerlink" href="#プロジェクトへのadstir-sdkの追加" title="Permanent link">&para;</a></h2>
-<p>以前のバージョンのSDKを利用されている場合は、必ず関連するファイルを全て削除してください。  </p>
+<p>以前のバージョンのSDKを利用されている場合は、必ず関連するファイルを全て削除してください。</p>
 <ol>
 <li><a href="#sdkの準備">SDKの準備</a>でダウンロードした圧縮ファイルを展開してください。</li>
-<li>展開したフォルダの中にあるAdstirAds.frameworkを、プロジェクト内の任意の箇所にドラッグ&amp;ドロップします。</li>
-<li><code>Copy items if needed</code>にチェックを入れます。</li>
-<li><code>Add to targets</code>欄で、adstir SDKを利用するすべてのターゲットにチェックを入れます。</li>
-<li><code>Finish</code>をクリックします。</li>
+<li>展開したフォルダの中にある .aarファイルを「File -&gt; New -&gt; New Module -&gt; Import JAR / AAR Package」よりインポートしてください。
+<img alt="" src="../Adstir_sdk_tutorial_03.png" /></li>
+<li>「File -&gt; Project Structure -&gt; Dependencies -&gt; app」に、2.でインポートしたモジュールを追加してください。
+<img alt="" src="../Adstir_sdk_tutorial_04.png" /></li>
 </ol>
-<h3 id="対応提携ネットワークのライブラリの追加">対応提携ネットワークのライブラリの追加<a class="headerlink" href="#対応提携ネットワークのライブラリの追加" title="Permanent link">&para;</a></h3>
-<p>配布パッケージ内にある対応提携ネットワーク名のディレクトリを、プロジェクト内の任意のドラッグ&amp;ドロップすることで追加ができます。</p>
-<ol>
-<li>対応提携ネットワークのディレクトリを、プロジェクト内の任意の箇所にドラッグ&amp;ドロップします。<br />
-このディレクトリには、メディエーションアダプターと対応提携ネットワークの必要ライブラリが含まれています。<br />
-すでに該当の対応提携ネットワークを組み込まれている場合、重複して組み込むと不具合が発生することがございますので、ご注意下さい。</li>
-<li><code>Copy items if needed</code>にチェックを入れます。</li>
-<li><code>Add to targets</code>欄で、adstir SDKを利用するすべてのターゲットにチェックを入れます。</li>
-<li><code>Finish</code>をクリックします。</li>
-</ol>
-<h4 id="ビルド設定の変更">ビルド設定の変更<a class="headerlink" href="#ビルド設定の変更" title="Permanent link">&para;</a></h4>
-<ol>
-<li>プロジェクトファイル設定画面を開きます</li>
-<li>動画広告を組み込むビルドターゲットを選択します</li>
-<li><code>Build Target</code>タブを選択します</li>
-<li>画面右側の検索窓に<code>Other Linker Flags</code>と入力し、検索します</li>
-<li><code>Other Linker Flags</code>欄に、<code>-ObjC</code>と設定します<br />
-提携アドネットワークのSDKを呼び出すためには、この設定が必須となり、設定がされていない場合は、案件切れ扱いとなってしまいます</li>
-<li>組み込む対象の全てのビルドターゲットに、同じ設定を行います<br />
-もしくは、この設定はプロジェクト単位で設定することも可能です</li>
-</ol>
-<p><img alt="OtherLinkerFlag" src="../OtherLinkerFlags.png" /></p>
-<h4 id="依存frameworklibraryの追加">依存Framework/Libraryの追加<a class="headerlink" href="#依存frameworklibraryの追加" title="Permanent link">&para;</a></h4>
-<ol>
-<li>プロジェクトファイル設定画面を開きます</li>
-<li>動画広告を組み込むビルドターゲットを選択します</li>
-<li><strong>Build Phases</strong>タブを選択します</li>
-<li><code>Link Binary With Libraries</code>を開き、下記のFramework/Libraryを追加します</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>名前</th>
-<th>ステータス</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MediaPlayer.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>MessageUI.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>Social.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>StoreKit.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>libz.1.2.5.tbd</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>WebKit.framework</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td>CoreMotion.framework<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
-<td>Required</td>
-</tr>
-<tr>
-<td>CoreGraphics.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>ImageIO.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>MobileCoreServices.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>libc++.tbd</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>UIKit.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>libsqlite3.tbd</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>CoreLocation.framework<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
-<td>Required</td>
-</tr>
-<tr>
-<td>libresolv.9.tbd</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>libz.tbd</td>
-<td>Required</td>
-</tr>
-</tbody>
-</table>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>CoreMotion.frameworkはTapJoy、TikTokを利用する際に設定してください。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>CoreLocation.frameworkはMobvista、TikTokを利用する際に設定してください。&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<h2 id="google-play-servicesの追加">Google Play Servicesの追加<a class="headerlink" href="#google-play-servicesの追加" title="Permanent link">&para;</a></h2>
+<p>本SDKでは、<a href="https://developer.android.com/google/play-services/index.html">Google Play services</a>の機能を使用しています。<br />
+アプリケーションレベルのbuild.gradleに依存関係を設定します。</p>
+<div class="codehilite"><pre><span></span><span class="hll"><span class="n">dependencies</span> <span class="o">{</span>
+</span>    <span class="n">implementation</span> <span class="s1">&#39;com.google.android.gms:play-services-ads:x.x.x&#39;</span>
+<span class="hll"><span class="o">}</span>
+</span></pre></div>
                 
                   
                 

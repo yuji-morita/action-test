@@ -317,8 +317,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../init/cocoapods/" title="CocoaPods" class="md-nav__link">
-      CocoaPods
+    <a href="../../init/android_studio_integration/" title="Android Studioによる組み込み" class="md-nav__link">
+      Android Studioによる組み込み
     </a>
   </li>
 
@@ -418,45 +418,38 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sdkの組み込み" class="md-nav__link">
+    SDKの組み込み
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-studioによる組み込み推奨" class="md-nav__link">
+    Android Studioによる組み込み(推奨)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#手動組み込み" class="md-nav__link">
+    手動組み込み
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#sdkの準備" class="md-nav__link">
     SDKの準備
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cocoapodsを利用して組み込む場合" class="md-nav__link">
-    CocoaPodsを利用して組み込む場合
-  </a>
-  
 </li>
         
           <li class="md-nav__item">
-  <a href="#cocoapodsを利用せず組み込む場合" class="md-nav__link">
-    CocoaPodsを利用せず組み込む場合
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#プロジェクトへのsdkの追加" class="md-nav__link">
-    プロジェクトへのSDKの追加
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ビルド設定の変更" class="md-nav__link">
-    ビルド設定の変更
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#依存frameworklibraryの追加" class="md-nav__link">
-    依存Framework/Libraryの追加
+  <a href="#sdkの組み込み_1" class="md-nav__link">
+    SDKの組み込み
   </a>
   
 </li>
@@ -472,8 +465,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#atsの設定" class="md-nav__link">
-    ATSの設定
+  <a href="#proguardの設定" class="md-nav__link">
+    ProGuardの設定
   </a>
   
 </li>
@@ -1396,45 +1389,38 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sdkの組み込み" class="md-nav__link">
+    SDKの組み込み
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-studioによる組み込み推奨" class="md-nav__link">
+    Android Studioによる組み込み(推奨)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#手動組み込み" class="md-nav__link">
+    手動組み込み
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#sdkの準備" class="md-nav__link">
     SDKの準備
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cocoapodsを利用して組み込む場合" class="md-nav__link">
-    CocoaPodsを利用して組み込む場合
-  </a>
-  
 </li>
         
           <li class="md-nav__item">
-  <a href="#cocoapodsを利用せず組み込む場合" class="md-nav__link">
-    CocoaPodsを利用せず組み込む場合
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#プロジェクトへのsdkの追加" class="md-nav__link">
-    プロジェクトへのSDKの追加
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ビルド設定の変更" class="md-nav__link">
-    ビルド設定の変更
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#依存frameworklibraryの追加" class="md-nav__link">
-    依存Framework/Libraryの追加
+  <a href="#sdkの組み込み_1" class="md-nav__link">
+    SDKの組み込み
   </a>
   
 </li>
@@ -1450,8 +1436,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#atsの設定" class="md-nav__link">
-    ATSの設定
+  <a href="#proguardの設定" class="md-nav__link">
+    ProGuardの設定
   </a>
   
 </li>
@@ -1475,94 +1461,44 @@
                 
                 <h1 id="adcolony広告の導入">AdColony広告の導入<a class="headerlink" href="#adcolony広告の導入" title="Permanent link">&para;</a></h1>
 <h2 id="対応os">対応OS<a class="headerlink" href="#対応os" title="Permanent link">&para;</a></h2>
-<p>iOS 8.0以上</p>
-<h2 id="sdkの準備">SDKの準備<a class="headerlink" href="#sdkの準備" title="Permanent link">&para;</a></h2>
-<p>AdColonyのSDKは、VideoAdSDKBundledのパッケージに同梱されております。
-作成された動画枠の<code>動画SDK (iOS)</code>より取得いただけます。</p>
-<p><strong>adstir SDK 2.13.4よりAdColonyはXCode10以上でなければbitcodeが利用できません。</strong></p>
-<h3 id="cocoapodsを利用して組み込む場合">CocoaPodsを利用して組み込む場合<a class="headerlink" href="#cocoapodsを利用して組み込む場合" title="Permanent link">&para;</a></h3>
-<p>CocoaPodsでの導入については<a href="../../init/cocoapods/">こちら</a>をご覧ください。</p>
-<p>AdColonyを利用される場合、Podfileに下記の記述を追記します。<br />
-pathについては、配置しているSDKへのパスに適宜変更してください。</p>
-<div class="codehilite"><pre><span></span><span class="err">pod &#39;AdStir-Ads-SDK-VideoAdSDKBundled/AdColony&#39;, :path =&gt; &#39;AdstirAdsSdkiOS-X.X.X-VideoAdSDKBundled&#39;</span>
-</pre></div>
+<p>Android 4.4以上</p>
+<h2 id="sdkの組み込み">SDKの組み込み<a class="headerlink" href="#sdkの組み込み" title="Permanent link">&para;</a></h2>
+<h3 id="android-studioによる組み込み推奨">Android Studioによる組み込み(推奨)<a class="headerlink" href="#android-studioによる組み込み推奨" title="Permanent link">&para;</a></h3>
+<p>アプリケーションレベルのbuild.gradleにmavenリポジトリと依存関係を設定します。</p>
+<div class="codehilite"><pre><span></span><span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;http://cdnp.ad-stir.com/m2&#39;</span> <span class="o">}</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://adcolony.bintray.com/AdColony&#39;</span> <span class="o">}</span>
+<span class="o">}</span>
 
-<h3 id="cocoapodsを利用せず組み込む場合">CocoaPodsを利用せず組み込む場合<a class="headerlink" href="#cocoapodsを利用せず組み込む場合" title="Permanent link">&para;</a></h3>
-<h4 id="プロジェクトへのsdkの追加">プロジェクトへのSDKの追加<a class="headerlink" href="#プロジェクトへのsdkの追加" title="Permanent link">&para;</a></h4>
+<span class="hll"><span class="n">dependencies</span> <span class="o">{</span>
+</span>    <span class="c1">// 利用するadstirのSDKバージョンを設定します</span>
+    <span class="kt">def</span> <span class="n">adstir_version</span> <span class="o">=</span> <span class="s2">&quot;x.x.x&quot;</span> 
+    <span class="n">implementation</span> <span class="s2">&quot;com.ad-stir.webviewsdk:adstir-webviewsdk:${adstir_version}&quot;</span>
+    <span class="n">implementation</span> <span class="s2">&quot;com.ad-stir.mediationadapter:adstir-mediationadapter-adcolony:${adstir_version}&quot;</span>
+<span class="hll"><span class="o">}</span>
+</span></pre></div>
+
+<h3 id="手動組み込み">手動組み込み<a class="headerlink" href="#手動組み込み" title="Permanent link">&para;</a></h3>
+<h4 id="sdkの準備">SDKの準備<a class="headerlink" href="#sdkの準備" title="Permanent link">&para;</a></h4>
+<p>AdColonyのSDKは、VideoAdSDKBundledのパッケージに同梱されております。<br />
+作成された動画枠の<code>動画SDK (iOS)</code>より取得いただけます。</p>
+<h4 id="sdkの組み込み_1">SDKの組み込み<a class="headerlink" href="#sdkの組み込み_1" title="Permanent link">&para;</a></h4>
+<p><a href="../../init/manual_integration/">初期設定</a>の完了後、下記の手順で追加してください。</p>
 <ol>
-<li><code>AdColony</code>フォルダを、プロジェクト内の任意の箇所にドラッグ&amp;ドロップします。</li>
-<li><code>Copy items if needed</code>にチェックを入れます。</li>
-<li><code>Add to targets</code>欄で、<code>AdColony</code>を利用するすべてのターゲットにチェックを入れます。</li>
-<li><code>Finish</code>をクリックします。</li>
+<li>File -&gt; New -&gt; New Module -&gt; Import .JAR/.AAR Package より<code>adcolony-x.x.x.aar</code>,<code>androidwebviewmediation-adapter-adcolony.aar</code>を追加します。</li>
+<li>File -&gt; Project Structure -&gt; app -&gt; Dependencies より<code>adcolony-x.x.x</code>,<code>androidwebviewmediation-adapter-adcolony</code>を追加します。</li>
 </ol>
-<h4 id="ビルド設定の変更">ビルド設定の変更<a class="headerlink" href="#ビルド設定の変更" title="Permanent link">&para;</a></h4>
-<ol>
-<li>プロジェクトファイル設定画面を開きます。</li>
-<li>動画広告を組み込むビルドターゲットを選択します。</li>
-<li><strong>Build Target</strong>タブを選択します。</li>
-<li>画面右側の検索窓に<strong>Other Linker Flags</strong>と入力し、検索します。</li>
-<li><strong>Other Linker Flags</strong>欄に、<strong>-ObjC</strong>と <strong>-fobjc-arc</strong>を設定します。  </li>
-<li>組み込む対象の全てのビルドターゲットに、同じ設定を行います。<br />
-もしくは、この設定はプロジェクト単位で設定することも可能です。</li>
-</ol>
-<h4 id="依存frameworklibraryの追加">依存Framework/Libraryの追加<a class="headerlink" href="#依存frameworklibraryの追加" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>名前</th>
-<th>ステータス</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>libz.1.2.5.tbd</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>AudioToolbox.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>JavaScriptCore.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>MessageUI.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>MobileCoreServices.framework</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>Social.framework</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td>StoreKit.framework</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td>WatchConnectivity.framework</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td>WebKit.framework</td>
-<td>Optional</td>
-</tr>
-</tbody>
-</table>
-<h2 id="atsの設定">ATSの設定<a class="headerlink" href="#atsの設定" title="Permanent link">&para;</a></h2>
-<p>Info.plistに下記の記述を追加します。</p>
-<div class="codehilite"><pre><span></span><span class="nt">&lt;key&gt;</span>NSAppTransportSecurity<span class="nt">&lt;/key&gt;</span>
-<span class="nt">&lt;dict&gt;</span>
-    <span class="nt">&lt;key&gt;</span>NSAllowsArbitraryLoads<span class="nt">&lt;/key&gt;</span>
-    <span class="nt">&lt;false/&gt;</span>
-    <span class="nt">&lt;key&gt;</span>NSAllowsLocalNetworking<span class="nt">&lt;/key&gt;</span>
-    <span class="nt">&lt;true/&gt;</span>
-    <span class="nt">&lt;key&gt;</span>NSAllowsArbitraryLoadsInWebContent<span class="nt">&lt;/key&gt;</span>
-    <span class="nt">&lt;true/&gt;</span>
-<span class="nt">&lt;/dict&gt;</span>
+<h2 id="proguardの設定">ProGuardの設定<a class="headerlink" href="#proguardの設定" title="Permanent link">&para;</a></h2>
+<p>ProGuardを使用しているアプリにはproguard-rules.proに、下記の内容を追加してください。<br />
+この記述が無い場合、adstirの機能を正常に利用することができません。</p>
+<div class="codehilite"><pre><span></span><span class="o">-</span><span class="n">keepclassmembers</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="err">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nv">@android</span><span class="p">.</span><span class="n">webkit</span><span class="p">.</span><span class="n">JavascriptInterface</span><span class="w"> </span><span class="o">&lt;</span><span class="n">methods</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span>
+<span class="err">}</span><span class="w"></span>
+
+<span class="err">#</span><span class="w"> </span><span class="n">Keep</span><span class="w"> </span><span class="n">ADCNative</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="n">members</span><span class="w"> </span><span class="n">unobfuscated</span><span class="w"></span>
+<span class="o">-</span><span class="n">keepclassmembers</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="n">com</span><span class="p">.</span><span class="n">adcolony</span><span class="p">.</span><span class="n">sdk</span><span class="p">.</span><span class="n">ADCNative</span><span class="o">**</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">*</span><span class="p">;</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
 </pre></div>
                 
                   
