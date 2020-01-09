@@ -89,7 +89,7 @@ extra_css:
 
 extra:
     language: 'jp'
-    macro_value: 100
+    # macro_value: 100
 
 markdown_extensions:
   - admonition
@@ -104,6 +104,6 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.details
 
-plugins:
-  - search
-  - markdownextradata: {}
+# plugins:
+#   - search
+#   - markdownextradata: {}
