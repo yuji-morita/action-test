@@ -626,8 +626,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#idfaadvertising-identifierの使用" class="md-nav__link">
-    IDFA（Advertising Identifier）の使用
+  <a href="#android広告idの使用" class="md-nav__link">
+    Android広告IDの使用
   </a>
   
 </li>
@@ -698,7 +698,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../video/" title="動画リワード" class="md-nav__link">
+    <a href="../../video.md" title="動画リワード" class="md-nav__link">
       動画リワード
     </a>
   </li>
@@ -991,8 +991,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../api/banner/AdstirMraidViewDelegate-Protocol-Reference/" title="AdstirMraidViewDelegate" class="md-nav__link">
-      AdstirMraidViewDelegate
+    <a href="../../../api/banner/AdSize-Class-Reference/" title="AdSize" class="md-nav__link">
+      AdSize
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../api/banner/Listener-Class-Reference/" title="Listener" class="md-nav__link">
+      Listener
     </a>
   </li>
 
@@ -1029,6 +1041,18 @@
   <li class="md-nav__item">
     <a href="../../../api/swipe/AdstirFullscreenView-Class-Reference/" title="AdstirFullscreenView" class="md-nav__link">
       AdstirFullscreenView
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../api/swipe/AdstirFullscreenListener-Class-Reference/" title="AdstirFullscreenListener" class="md-nav__link">
+      AdstirFullscreenListener
     </a>
   </li>
 
@@ -1075,8 +1099,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../api/native/AdstirNativeAdDelegate-Protocol-Reference/" title="AdstirNativeAdDelegate" class="md-nav__link">
-      AdstirNativeAdDelegate
+    <a href="../../../api/native/AdstirNativeAdListener-Interface-Reference/" title="AdstirNativeAdListener" class="md-nav__link">
+      AdstirNativeAdListener
     </a>
   </li>
 
@@ -1099,8 +1123,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../api/native/AdstirLoadImageDeledate-Protocol-Reference/" title="AdstirLoadImageDeledate" class="md-nav__link">
-      AdstirLoadImageDeledate
+    <a href="../../../api/native/AdstirLoadImageListener-Interface-Reference/" title="AdstirLoadImageListener" class="md-nav__link">
+      AdstirLoadImageListener
     </a>
   </li>
 
@@ -1111,8 +1135,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../api/native/AdstirLoadSmallImageDeledate-Protocol-Reference/" title="AdstirLoadSmallImageDeledate" class="md-nav__link">
-      AdstirLoadSmallImageDeledate
+    <a href="../../../api/native/AdstirLoadIconListener-Interface-Reference/" title="AdstirLoadIconListener" class="md-nav__link">
+      AdstirLoadIconListener
     </a>
   </li>
 
@@ -1166,8 +1190,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../api/native/video/AdstirNativeVideoViewDelegate-Protocol-Reference/" title="AdstirNativeVideoViewDelegate" class="md-nav__link">
-      AdstirNativeVideoViewDelegate
+    <a href="../../../api/native/video/AdstirNativeVideoListener-Interface-Reference/" title="AdstirNativeVideoListener" class="md-nav__link">
+      AdstirNativeVideoListener
     </a>
   </li>
 
@@ -1243,7 +1267,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../api/video/AdstirVideoReward-Class-Reference/" title="AdstirVideoReward" class="md-nav__link">
+    <a href="../../../api/reward/AdstirVideoReward-Class-Reference/" title="AdstirVideoReward" class="md-nav__link">
       AdstirVideoReward
     </a>
   </li>
@@ -1255,7 +1279,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../api/video/AdstirVideoRewardDelegate-Protocol-Reference/" title="AdstirVideoRewardDelegate" class="md-nav__link">
+    <a href="../../../api/reward/AdstirVideoRewardDelegate-Protocol-Reference/" title="AdstirVideoRewardDelegate" class="md-nav__link">
       AdstirVideoRewardDelegate
     </a>
   </li>
@@ -1354,8 +1378,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#idfaadvertising-identifierの使用" class="md-nav__link">
-    IDFA（Advertising Identifier）の使用
+  <a href="#android広告idの使用" class="md-nav__link">
+    Android広告IDの使用
   </a>
   
 </li>
@@ -1398,10 +1422,9 @@
                 
                 
                 <h1 id="ネイティブライクバナー">ネイティブライクバナー<a class="headerlink" href="#ネイティブライクバナー" title="Permanent link">&para;</a></h1>
+<p>ネイティブライクバナー広告は、ネイティブ広告をバナーのように配置して掲載する広告形式です。</p>
 <h2 id="一般的な掲載方法">一般的な掲載方法<a class="headerlink" href="#一般的な掲載方法" title="Permanent link">&para;</a></h2>
-<p>ネイティブライクバナーは、簡単に掲載することが可能です。<br />
-アプリ内でテンプレートに合ったサイズのWebViewを作成していただき、そこに管理画面で取得できるタグを記述したHTMLファイルを表示するだけです。<br />
-なお、綺麗なサイズで表示するためには、marginやpaddingを初期化する必要があります。</p>
+<p>アプリ内でテンプレートに合ったサイズのWebViewを作成していただき、そこに管理画面で取得できるタグを記述したHTMLファイルを表示するのみです。なお、綺麗なサイズで表示するためには、marginやpaddingを初期化する必要があります。</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
 <span class="nt">html</span><span class="o">,</span><span class="nt">body</span> <span class="p">{</span> <span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span> <span class="k">padding</span><span class="p">:</span><span class="mi">0</span> <span class="p">}</span> <span class="c">/* marginとpaddingを0に */</span>
 <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
@@ -1409,8 +1432,8 @@
 <span class="kd">var</span> <span class="nx">adstir_vars</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">ver</span><span class="o">:</span> <span class="s2">&quot;4.0&quot;</span><span class="p">,</span>
   <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;native&quot;</span><span class="p">,</span>
-  <span class="nx">app_id</span><span class="o">:</span> <span class="s2">&quot;MEDIA-aeeaa332&quot;</span><span class="p">,</span>
-  <span class="nx">ad_spot</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="nx">app_id</span><span class="o">:</span> <span class="s2">&quot;MEDIA-XXXXX&quot;</span><span class="p">,</span>
+  <span class="nx">ad_spot</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="nx">async</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
 <span class="p">};</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -1418,8 +1441,7 @@
 </pre></div>
 
 <h2 id="バナーサイズのリサイズ">バナーサイズのリサイズ<a class="headerlink" href="#バナーサイズのリサイズ" title="Permanent link">&para;</a></h2>
-<p>ネイティブライクバナーは、自由にリサイズをすることが可能です。<br />
-下記の様に、幅とスケールを指定することで、基本サイズ(テンプレート選択画面に記載)からリサイズできます。</p>
+<p>ネイティブライクバナーは、自由にリサイズをすることが可能です。下記の様に、幅とスケールを指定することで、基本サイズ(テンプレート選択画面に記載)からリサイズできます。</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
 <span class="nt">html</span><span class="o">,</span><span class="nt">body</span> <span class="p">{</span> <span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span> <span class="k">padding</span><span class="p">:</span><span class="mi">0</span> <span class="p">}</span> <span class="c">/* marginとpaddingを0に */</span>
 <span class="p">#</span><span class="nn">adstir_native_widget_wrapper</span> <span class="p">{</span>
@@ -1435,58 +1457,19 @@
 <span class="kd">var</span> <span class="nx">adstir_vars</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">ver</span><span class="o">:</span> <span class="s2">&quot;4.0&quot;</span><span class="p">,</span>
   <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;native&quot;</span><span class="p">,</span>
-  <span class="nx">app_id</span><span class="o">:</span> <span class="s2">&quot;MEDIA-aeeaa332&quot;</span><span class="p">,</span>
-  <span class="nx">ad_spot</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="nx">app_id</span><span class="o">:</span> <span class="s2">&quot;MEDIA-XXXXX&quot;</span><span class="p">,</span>
+  <span class="nx">ad_spot</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="nx">async</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
 <span class="p">};</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.ad-stir.com/js/adstir_native.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 
-<h2 id="idfaadvertising-identifierの使用">IDFA（Advertising Identifier）の使用<a class="headerlink" href="#idfaadvertising-identifierの使用" title="Permanent link">&para;</a></h2>
-<p>アプリに掲載する広告は、広告識別子を送信することでさらなる収益化が可能になる場合があります。 </p>
-<p>広告識別子の取得方法は、下記取得サンプルと、<a href="https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/">公式ドキュメント(英語)</a>をご覧下さい。</p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">swift</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1">// AdSupport.frameworkが必要です</span>
-<span class="kd">import</span> <span class="nc">AdSupport</span>
-<span class="p">...</span>
-<span class="kd">let</span> <span class="nv">identifierManager</span> <span class="p">=</span> <span class="bp">ASIdentifierManager</span><span class="p">()</span>
-<span class="k">if</span><span class="p">(</span><span class="n">identifierManager</span><span class="p">.</span><span class="n">isAdvertisingTrackingEnabled</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">idfa</span> <span class="p">=</span> <span class="n">identifierManager</span><span class="p">.</span><span class="n">advertisingIdentifier</span>
-<span class="p">}</span>
-</pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">objective-c</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1">// AdSupport.frameworkが必要です</span>
-<span class="k">@import</span> <span class="n">AdSupport</span><span class="p">;</span>
-<span class="p">...</span>
-<span class="bp">ASIdentifierManager</span> <span class="o">*</span><span class="n">identifierManager</span> <span class="o">=</span> <span class="p">[</span><span class="bp">ASIdentifierManager</span> <span class="n">sharedManager</span><span class="p">];</span>
-<span class="k">if</span> <span class="p">([</span><span class="n">identifierManager</span> <span class="n">isAdvertisingTrackingEnabled</span><span class="p">])</span> 
-    <span class="bp">NSString</span> <span class="o">*</span><span class="n">idfa</span> <span class="o">=</span> <span class="n">identifierManager</span><span class="p">.</span><span class="n">advertisingIdentifier</span><span class="p">.</span><span class="n">UUIDString</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div></div>
-</div>
-<p>HTMLを生成する際に<code>{{ここに広告識別子を書き出す}}</code>の部分を、取得した広告識別子で置換してください。なお、広告識別子は、IDFAの使用に記載の通り、オプトアウトされている場合の利用が制限されております。下記コードのコメントに記載の通り、適切な対応をお願い致します。 </p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
-<span class="nt">html</span><span class="o">,</span><span class="nt">body</span> <span class="p">{</span> <span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span> <span class="k">padding</span><span class="p">:</span><span class="mi">0</span> <span class="p">}</span> <span class="c">/* marginとpaddingを0に */</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
-<span class="kd">var</span> <span class="nx">adstir_vars</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">ver</span><span class="o">:</span> <span class="s2">&quot;4.0&quot;</span><span class="p">,</span>
-  <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;native&quot;</span><span class="p">,</span>
-  <span class="nx">app_id</span><span class="o">:</span> <span class="s2">&quot;MEDIA-aeeaa332&quot;</span><span class="p">,</span>
-  <span class="nx">ad_spot</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-  <span class="nx">async</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nx">lmt</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// ユーザーがオプトアウトしている場合は、trueを設定してください</span>
-  <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="c1">// 広告識別子の種類(Apple - IDFA)</span>
-  <span class="nx">uid</span><span class="o">:</span> <span class="s2">&quot;{{ここに広告識別子を書き出す}}&quot;</span><span class="p">,</span> <span class="c1">// 広告識別子</span>
-<span class="p">};</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.ad-stir.com/js/adstir_native.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</pre></div>
-
+<h2 id="android広告idの使用">Android広告IDの使用<a class="headerlink" href="#android広告idの使用" title="Permanent link">&para;</a></h2>
+<p>アプリに掲載する広告は、広告識別子を送信することでさらなる収益化が可能になる場合があります。</p>
+<ul>
+<li><a href="https://github.com/united-adstir/AdStir-Integration-Guide-Android/wiki/Android%E5%BA%83%E5%91%8AID%E3%81%AE%E9%80%81%E4%BF%A1">Android広告IDの使用</a></li>
+</ul>
 <h2 id="よくある質問">よくある質問<a class="headerlink" href="#よくある質問" title="Permanent link">&para;</a></h2>
 <h3 id="useragentの変更について">User−Agentの変更について<a class="headerlink" href="#useragentの変更について" title="Permanent link">&para;</a></h3>
 <p>User-Agentを標準のものから変更された場合、正常に広告は配信されません。</p>
