@@ -246,7 +246,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://yuji-morita.github.io/action-test/adstir/api/reward/AdstirVideoRewardDelegate-Protocol-Reference/</loc>
+     <loc>https://yuji-morita.github.io/action-test/adstir/api/reward/AdstirVideoRewardListener-Interface-Reference/</loc>
      <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -256,7 +256,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://yuji-morita.github.io/action-test/adstir/api/interstitial/AdstirInterstitialDelegate-Protocol-Reference/</loc>
+     <loc>https://yuji-morita.github.io/action-test/adstir/api/interstitial/AdstirInterstitialListener-Interface-Reference/</loc>
      <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>

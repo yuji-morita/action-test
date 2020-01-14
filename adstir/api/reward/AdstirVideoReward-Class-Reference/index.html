@@ -1218,6 +1218,26 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#constructor" class="md-nav__link">
+    Constructor
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adstirvideoreward" class="md-nav__link">
+    AdstirVideoReward
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#static-methods" class="md-nav__link">
     Static Methods
   </a>
@@ -1251,13 +1271,6 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adstirvideoreward" class="md-nav__link">
-    AdstirVideoReward
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#setadstirvideorewardlistener" class="md-nav__link">
@@ -1344,8 +1357,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../AdstirVideoRewardDelegate-Protocol-Reference/" title="AdstirVideoRewardDelegate" class="md-nav__link">
-      AdstirVideoRewardDelegate
+    <a href="../AdstirVideoRewardListener-Interface-Reference/" title="AdstirVideoRewardListener" class="md-nav__link">
+      AdstirVideoRewardListener
     </a>
   </li>
 
@@ -1392,8 +1405,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interstitial/AdstirInterstitialDelegate-Protocol-Reference/" title="AdstirInterstitialDelegate" class="md-nav__link">
-      AdstirInterstitialDelegate
+    <a href="../../interstitial/AdstirInterstitialListener-Interface-Reference/" title="AdstirInterstitialListener" class="md-nav__link">
+      AdstirInterstitialListener
     </a>
   </li>
 
@@ -1429,6 +1442,26 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#constructor" class="md-nav__link">
+    Constructor
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adstirvideoreward" class="md-nav__link">
+    AdstirVideoReward
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#static-methods" class="md-nav__link">
     Static Methods
   </a>
@@ -1462,13 +1495,6 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adstirvideoreward" class="md-nav__link">
-    AdstirVideoReward
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#setadstirvideorewardlistener" class="md-nav__link">
@@ -1556,12 +1582,43 @@
                 
                 
                 <h1 id="adstirvideoreward-class-reference">AdstirVideoReward Class Reference<a class="headerlink" href="#adstirvideoreward-class-reference" title="Permanent link">&para;</a></h1>
-<p>動画視聴型インセンティブ広告を呼び出すためのクラスです。</p>
+<p>動画リワード広告を呼び出すためのクラスです。</p>
+<h2 id="constructor">Constructor<a class="headerlink" href="#constructor" title="Permanent link">&para;</a></h2>
+<h3 id="adstirvideoreward">AdstirVideoReward<a class="headerlink" href="#adstirvideoreward" title="Permanent link">&para;</a></h3>
+<p>管理画面から取得したメディアIDと枠Noを設定してください。</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="nf">AdstirVideoReward</span><span class="p">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="p">,</span> <span class="n">String</span> <span class="n">mediaId</span><span class="p">,</span> <span class="kt">int</span> <span class="n">spotNo</span><span class="p">)</span> 
+</pre></div>
+
+<ul>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>パラメータ</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>activity</td>
+<td>アクティビティ</td>
+</tr>
+<tr>
+<td>mediaId</td>
+<td>メディアID</td>
+</tr>
+<tr>
+<td>spotNo</td>
+<td>枠No</td>
+</tr>
+</tbody>
+</table>
 <h2 id="static-methods">Static Methods<a class="headerlink" href="#static-methods" title="Permanent link">&para;</a></h2>
 <h3 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated</p>
-<p>このメソッドの代わりに<a href="">こちら</a>をご利用ください</p>
+<p>このメソッドの代わりに<a href="../../AdstirVideoAds-Class-Reference/#init">こちら</a>をご利用ください</p>
 </div>
 <p>広告の初期化を行います。<a href="#AdstirVideoReward">コンストラクタ</a>より前に呼び出してください。</p>
 <div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="p">,</span> <span class="n">String</span> <span class="n">mediaId</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">spotNoArray</span><span class="p">)</span>
@@ -1595,7 +1652,7 @@
 <h3 id="setmediauserid">setMediaUserID<a class="headerlink" href="#setmediauserid" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated</p>
-<p>このメソッドの代わりに<a href="">こちら</a>をご利用ください</p>
+<p>このメソッドの代わりに<a href="../../AdstirVideoAds-Class-Reference/#setmediauserid">こちら</a>をご利用ください</p>
 </div>
 <p>インセンティブを付与するユーザーのIDを指定します。
 サーバーサイドで成果通知を受け取る場合は指定が必須となります。
@@ -1621,39 +1678,9 @@
 </tbody>
 </table>
 <h2 id="instance-methods">Instance Methods<a class="headerlink" href="#instance-methods" title="Permanent link">&para;</a></h2>
-<h3 id="adstirvideoreward">AdstirVideoReward<a class="headerlink" href="#adstirvideoreward" title="Permanent link">&para;</a></h3>
-<p>コンストラクタです。</p>
-<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="nf">AdstirVideoReward</span><span class="p">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="p">,</span> <span class="n">String</span> <span class="n">mediaId</span><span class="p">,</span> <span class="kt">int</span> <span class="n">spotNo</span><span class="p">)</span> 
-</pre></div>
-
-<ul>
-<li>Parameters</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>パラメータ</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>activity</td>
-<td>アクティビティ</td>
-</tr>
-<tr>
-<td>mediaId</td>
-<td>メディアID</td>
-</tr>
-<tr>
-<td>spotNo</td>
-<td>枠No</td>
-</tr>
-</tbody>
-</table>
 <h3 id="setadstirvideorewardlistener">setAdstirVideoRewardListener<a class="headerlink" href="#setadstirvideorewardlistener" title="Permanent link">&para;</a></h3>
 <p>リスナーを設定します。広告の読み込み時、リワードの取得時に実行する処理などを指定することが出来ます。<br />
-AdstirVideoRewardListenerの詳細については[<a href="">こちら</a>をご覧ください。</p>
+AdstirVideoRewardListenerの詳細については<a href="AdstirNativeVideoListener-Interface-Reference.md">こちら</a>をご覧ください。</p>
 <div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAdstirVideoRewardListener</span><span class="p">(</span><span class="n">AdstirVideoRewardListener</span> <span class="n">listener</span><span class="p">)</span>
 </pre></div>
 

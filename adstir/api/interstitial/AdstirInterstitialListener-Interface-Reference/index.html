@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://yuji-morita.github.io/action-test/adstir/api/interstitial/AdstirInterstitialDelegate-Protocol-Reference/">
+        <link rel="canonical" href="https://yuji-morita.github.io/action-test/adstir/api/interstitial/AdstirInterstitialListener-Interface-Reference/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>AdstirInterstitialDelegate - adstir Integration Guide for Android</title>
+        <title>AdstirInterstitialListener - adstir Integration Guide for Android</title>
       
     
     
@@ -87,7 +87,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#adstirinterstitialdelegate-protocol-reference" tabindex="1" class="md-skip">
+      <a href="#adstirinterstitiallistener-interface-reference" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -1201,8 +1201,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reward/AdstirVideoRewardDelegate-Protocol-Reference/" title="AdstirVideoRewardDelegate" class="md-nav__link">
-      AdstirVideoRewardDelegate
+    <a href="../../reward/AdstirVideoRewardListener-Interface-Reference/" title="AdstirVideoRewardListener" class="md-nav__link">
+      AdstirVideoRewardListener
     </a>
   </li>
 
@@ -1260,11 +1260,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        AdstirInterstitialDelegate
+        AdstirInterstitialListener
       </label>
     
-    <a href="./" title="AdstirInterstitialDelegate" class="md-nav__link md-nav__link--active">
-      AdstirInterstitialDelegate
+    <a href="./" title="AdstirInterstitialListener" class="md-nav__link md-nav__link--active">
+      AdstirInterstitialListener
     </a>
     
       
@@ -1278,129 +1278,51 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instance-methods" class="md-nav__link">
-    Instance Methods
+  <a href="#methods" class="md-nav__link">
+    Methods
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidload" class="md-nav__link">
-    -adstirInterstitialDidLoad:
+  <a href="#onload" class="md-nav__link">
+    onLoad
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidfailtoloadwitherror" class="md-nav__link">
-    -adstirInterstitial:didFailToLoadWithError:
+  <a href="#onfailed" class="md-nav__link">
+    onFailed
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_1" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidshow" class="md-nav__link">
-    -adstirInterstitialDidShow:
+  <a href="#onstart" class="md-nav__link">
+    onStart
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_2" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidfailtoshowwitherror" class="md-nav__link">
-    -adstirInterstitial:didFailToShowWithError:
+  <a href="#onstartfailed" class="md-nav__link">
+    onStartFailed
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_3" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidclose" class="md-nav__link">
-    -adstirInterstitialDidClose:
+  <a href="#onfinished" class="md-nav__link">
+    onFinished
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#parameters_4" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-code" class="md-nav__link">
-    Error code
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adstirinterstitialerror" class="md-nav__link">
-    AdstirInterstitialError
+  <a href="#onclose" class="md-nav__link">
+    onClose
   </a>
   
 </li>
@@ -1452,129 +1374,51 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instance-methods" class="md-nav__link">
-    Instance Methods
+  <a href="#methods" class="md-nav__link">
+    Methods
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidload" class="md-nav__link">
-    -adstirInterstitialDidLoad:
+  <a href="#onload" class="md-nav__link">
+    onLoad
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidfailtoloadwitherror" class="md-nav__link">
-    -adstirInterstitial:didFailToLoadWithError:
+  <a href="#onfailed" class="md-nav__link">
+    onFailed
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_1" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidshow" class="md-nav__link">
-    -adstirInterstitialDidShow:
+  <a href="#onstart" class="md-nav__link">
+    onStart
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_2" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidfailtoshowwitherror" class="md-nav__link">
-    -adstirInterstitial:didFailToShowWithError:
+  <a href="#onstartfailed" class="md-nav__link">
+    onStartFailed
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_3" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-adstirinterstitialdidclose" class="md-nav__link">
-    -adstirInterstitialDidClose:
+  <a href="#onfinished" class="md-nav__link">
+    onFinished
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#parameters_4" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-code" class="md-nav__link">
-    Error code
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adstirinterstitialerror" class="md-nav__link">
-    AdstirInterstitialError
+  <a href="#onclose" class="md-nav__link">
+    onClose
   </a>
   
 </li>
@@ -1601,146 +1445,138 @@
               
                 
                 
-                <h1 id="adstirinterstitialdelegate-protocol-reference">AdstirInterstitialDelegate Protocol Reference<a class="headerlink" href="#adstirinterstitialdelegate-protocol-reference" title="Permanent link">&para;</a></h1>
-<p>全画面インタースティシャル広告のデリゲートです。</p>
-<h2 id="instance-methods">Instance Methods<a class="headerlink" href="#instance-methods" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="#-adstirinterstitialdidload">-adstirInterstitialDidLoad:</a></li>
-<li><a href="#-adstirinterstitialdidfailtoloadwitherror">-adstirInterstitial:didFailToLoadWithError:</a></li>
-<li><a href="#-adstirinterstitialdidshow">-adstirInterstitialDidShow:</a></li>
-<li><a href="#-adstirinterstitialdidfailtoshowwitherror">-adstirInterstitial:didFailToShowWithError:</a></li>
-<li><a href="#-adstirinterstitialdidclose">-adstirInterstitialDidClose:</a></li>
-</ul>
-<hr />
-<h3 id="-adstirinterstitialdidload">-adstirInterstitialDidLoad:<a class="headerlink" href="#-adstirinterstitialdidload" title="Permanent link">&para;</a></h3>
-<p>インタースティシャル広告の準備が完了した際に呼び出されます。</p>
-<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">adstirInterstitialDidLoad:</span><span class="p">(</span><span class="n">AdstirInterstitial</span> <span class="o">*</span><span class="p">)</span><span class="nv">interstitial</span><span class="p">;</span>
+                <h1 id="adstirinterstitiallistener-interface-reference">AdstirInterstitialListener Interface Reference<a class="headerlink" href="#adstirinterstitiallistener-interface-reference" title="Permanent link">&para;</a></h1>
+<p>全画面インタースティシャル広告の各イベントを通知するリスナーです。</p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h3 id="onload">onLoad<a class="headerlink" href="#onload" title="Permanent link">&para;</a></h3>
+<p>広告読み込み完了時に呼び出されます。</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoad</span><span class="p">(</span><span class="kt">int</span> <span class="n">spot_no</span><span class="p">)</span>
 </pre></div>
 
-<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
-<li><em>interstitial</em><ul>
-<li>インタースティシャル広告の準備が完了したインスタンス</li>
+<li>Parameters</li>
 </ul>
-</li>
-</ul>
-<hr />
-<h3 id="-adstirinterstitialdidfailtoloadwitherror">-adstirInterstitial:didFailToLoadWithError:<a class="headerlink" href="#-adstirinterstitialdidfailtoloadwitherror" title="Permanent link">&para;</a></h3>
-<p>インタースティシャル広告の準備に失敗した際に呼び出されます。<br />
-エラーコードについては<a href="#adstirinterstitialerror">こちら</a>をご覧ください。</p>
-<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">adstirInterstitial:</span><span class="p">(</span><span class="n">AdstirInterstitial</span> <span class="o">*</span><span class="p">)</span><span class="nv">interstitial</span> <span class="nf">didFailToLoadWithError:</span><span class="p">(</span><span class="bp">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span>
-</pre></div>
-
-<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li><em>interstitial</em><ul>
-<li>インタースティシャル広告の準備に失敗したインスタンス</li>
-</ul>
-</li>
-<li><em>error</em><ul>
-<li>エラーメッセージ</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h3 id="-adstirinterstitialdidshow">-adstirInterstitialDidShow:<a class="headerlink" href="#-adstirinterstitialdidshow" title="Permanent link">&para;</a></h3>
-<p>インタースティシャル広告が表示された際に呼び出されます。</p>
-<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">adstirInterstitialDidShow:</span><span class="p">(</span><span class="n">AdstirInterstitial</span> <span class="o">*</span><span class="p">)</span><span class="nv">interstitial</span><span class="p">;</span>
-</pre></div>
-
-<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
-<ul>
-<li><em>Interstitial</em><ul>
-<li>インタースティシャル広告を表示したインスタンス</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h3 id="-adstirinterstitialdidfailtoshowwitherror">-adstirInterstitial:didFailToShowWithError:<a class="headerlink" href="#-adstirinterstitialdidfailtoshowwitherror" title="Permanent link">&para;</a></h3>
-<p>インタースティシャル広告の表示に失敗した際に呼び出されます。<br />
-エラーコードについては<a href="#adstirinterstitialerror">こちら</a>をご覧ください。</p>
-<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">adstirInterstitial:</span><span class="p">(</span><span class="n">AdstirInterstitial</span> <span class="o">*</span><span class="p">)</span><span class="nv">interstitial</span> <span class="nf">didFailToShowWithError:</span><span class="p">(</span><span class="bp">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span>
-</pre></div>
-
-<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><em>interstitial</em></p>
-<ul>
-<li>インタースティシャル広告の表示に失敗したインスタンス</li>
-</ul>
-</li>
-<li>
-<p><em>error</em></p>
-<ul>
-<li>エラーメッセージ</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h3 id="-adstirinterstitialdidclose">-adstirInterstitialDidClose:<a class="headerlink" href="#-adstirinterstitialdidclose" title="Permanent link">&para;</a></h3>
-<p>インタースティシャル広告が閉じられたときに呼び出されます。</p>
-<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">adstirInterstitialDidClose:</span><span class="p">(</span><span class="n">AdstirInterstitial</span> <span class="o">*</span><span class="p">)</span><span class="nv">interstitial</span><span class="p">;</span>
-</pre></div>
-
-<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
-<ul>
-<li><em>interstitial</em><ul>
-<li>インタースティシャル広告が閉じられたインスタンス</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h2 id="error-code">Error code<a class="headerlink" href="#error-code" title="Permanent link">&para;</a></h2>
-<h3 id="adstirinterstitialerror">AdstirInterstitialError<a class="headerlink" href="#adstirinterstitialerror" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>エラーコード</th>
-<th>定義</th>
-<th>説明</th>
+<th>パラメータ</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>15000</td>
-<td>AdstirInterstitialErrorUnknown</td>
-<td>Unknownエラー</td>
+<td>spot_no</td>
+<td>枠No</td>
 </tr>
+</tbody>
+</table>
+<h3 id="onfailed">onFailed<a class="headerlink" href="#onfailed" title="Permanent link">&para;</a></h3>
+<p>広告読み込み失敗時に呼び出されます。</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailed</span><span class="p">(</span><span class="kt">int</span> <span class="n">spot_no</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
 <tr>
-<td>15001</td>
-<td>AdstirInterstitialErrorInternal</td>
-<td>Internalエラー(アプリ側へは通知されません)</td>
+<th>パラメータ</th>
+<th></th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>15002</td>
-<td>AdstirInterstitialErrorNoFill</td>
-<td>案件切れによる読み込みエラー</td>
+<td>spot_no</td>
+<td>枠No</td>
 </tr>
+</tbody>
+</table>
+<h3 id="onstart">onStart<a class="headerlink" href="#onstart" title="Permanent link">&para;</a></h3>
+<p>動画再生開始時に呼び出されます。</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="p">(</span><span class="kt">int</span> <span class="n">spot_no</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
 <tr>
-<td>15003</td>
-<td>AdstirInterstitialErrorFailedToShow</td>
-<td>広告再生失敗エラー</td>
+<th>パラメータ</th>
+<th></th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>15004</td>
-<td>AdstirInterstitialErrorInvalidSpot</td>
-<td>存在しない広告枠への読み込みエラー</td>
+<td>spot_no</td>
+<td>枠No</td>
 </tr>
+</tbody>
+</table>
+<h3 id="onstartfailed">onStartFailed<a class="headerlink" href="#onstartfailed" title="Permanent link">&para;</a></h3>
+<p>動画再生失敗時に呼び出されます。</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStartFailed</span><span class="p">(</span><span class="kt">int</span> <span class="n">spot_no</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
 <tr>
-<td>15005</td>
-<td>AdstirInterstitialErrorDidNotInitialize</td>
-<td>初期化未完了時の読み込みエラー</td>
+<th>パラメータ</th>
+<th></th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>15006</td>
-<td>AdstirInterstitialErrorMediationAdapterNotFound</td>
-<td>メディエーションアダプタの呼び出しエラー(アプリ側へは通知されません)</td>
+<td>spot_no</td>
+<td>枠No</td>
 </tr>
+</tbody>
+</table>
+<h3 id="onfinished">onFinished<a class="headerlink" href="#onfinished" title="Permanent link">&para;</a></h3>
+<p>動画再生終了時に呼び出されます。</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFinished</span><span class="p">(</span><span class="kt">int</span> <span class="n">spot_no</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
 <tr>
-<td>***</td>
-<td></td>
-<td></td>
+<th>パラメータ</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spot_no</td>
+<td>枠No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="onclose">onClose<a class="headerlink" href="#onclose" title="Permanent link">&para;</a></h3>
+<p>動画Viewが閉じられるときに呼び出されます。</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClose</span><span class="p">(</span><span class="kt">int</span> <span class="n">spot_no</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>パラメータ</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spot_no</td>
+<td>枠No</td>
 </tr>
 </tbody>
 </table>
