@@ -623,10 +623,46 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../video.md" title="動画リワード" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4-4" type="checkbox" id="nav-1-2-4-4">
+    
+    <label class="md-nav__link" for="nav-1-2-4-4">
       動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-1-2-4-4">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reward/" title="実装" class="md-nav__link">
+      実装
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reward/callback/" title="リワードコールバック" class="md-nav__link">
+      リワードコールバック
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1480,13 +1516,6 @@
 <h2 id="対応os">対応OS<a class="headerlink" href="#対応os" title="Permanent link">&para;</a></h2>
 <p>Android4.4以上</p>
 <h2 id="広告の設定">広告の設定<a class="headerlink" href="#広告の設定" title="Permanent link">&para;</a></h2>
-<ol>
-<li>動画広告の初期化を行う</li>
-<li>全画面インタースティシャル広告のインスタンスを生成</li>
-<li>リスナーの生成</li>
-<li>全画面インタースティシャル広告の読み込み</li>
-<li>全画面インタースティシャル広告の再生</li>
-</ol>
 <h3 id="1動画広告の初期化を行う">1.動画広告の初期化を行う<a class="headerlink" href="#1動画広告の初期化を行う" title="Permanent link">&para;</a></h3>
 <p>はじめ、<code>AdstirVideoAds.init()</code>を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。　　<a href="../reward/">動画リワード広告</a>と全画面インタースティシャル広告を併用する場合は、同時に初期化を行う必要があります。</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 使用する動画リワードと全画面インタースティシャルの全てのスポットIDについて、初期化処理を行います。</span>
@@ -1640,7 +1669,7 @@
 </pre></div>
 
 <h2 id="ライブラリ詳細">ライブラリ詳細<a class="headerlink" href="#ライブラリ詳細" title="Permanent link">&para;</a></h2>
-<p><a href="../../api/">APIリファレンス</a>をご覧ください。</p>
+<p><a href="../../api/#全画面インタースティシャル広告">APIリファレンス</a>をご覧ください。</p>
                 
                   
                 

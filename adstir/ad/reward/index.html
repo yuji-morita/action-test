@@ -38,7 +38,7 @@
     
     
       
-        <title>adstir Integration Guide for Android</title>
+        <title>実装 - adstir Integration Guide for Android</title>
       
     
     
@@ -152,7 +152,9 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -161,7 +163,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link md-tabs__link--active">
           ガイド
         </a>
       
@@ -209,10 +211,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     
     <label class="md-nav__link" for="nav-1">
       ガイド
@@ -240,10 +244,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
     
     <label class="md-nav__link" for="nav-1-2">
       adstir
@@ -511,10 +517,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4" checked>
     
     <label class="md-nav__link" for="nav-1-2-4">
       広告の実装
@@ -614,11 +622,163 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4-4" type="checkbox" id="nav-1-2-4-4" checked>
+    
+    <label class="md-nav__link" for="nav-1-2-4-4">
+      動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-1-2-4-4">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        実装
+      </label>
+    
+    <a href="./" title="実装" class="md-nav__link md-nav__link--active">
+      実装
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#対応os" class="md-nav__link">
+    対応OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#広告の設定" class="md-nav__link">
+    広告の設定
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1メディアユーザidの設定を行う" class="md-nav__link">
+    1.メディアユーザIDの設定を行う
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2動画広告の初期化を行う" class="md-nav__link">
+    2.動画広告の初期化を行う
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3動画リワード広告のインスタンスを生成" class="md-nav__link">
+    3.動画リワード広告のインスタンスを生成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4リスナーの生成" class="md-nav__link">
+    4.リスナーの生成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5動画リワード広告の読み込み" class="md-nav__link">
+    5.動画リワード広告の読み込み
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6動画リワード広告の再生" class="md-nav__link">
+    6.動画リワード広告の再生
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#動画リワード広告の実装例" class="md-nav__link">
+    動画リワード広告の実装例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ライブラリ詳細" class="md-nav__link">
+    ライブラリ詳細
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#成果のコールバックurlへの通知" class="md-nav__link">
+    成果のコールバックURLへの通知
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../video.md" title="動画リワード" class="md-nav__link">
-      動画リワード
+    <a href="callback/" title="リワードコールバック" class="md-nav__link">
+      リワードコールバック
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1385,16 +1545,8 @@
 <h2 id="対応os">対応OS<a class="headerlink" href="#対応os" title="Permanent link">&para;</a></h2>
 <p>Android4.1以上(Andoid4.4以上推奨)</p>
 <h2 id="広告の設定">広告の設定<a class="headerlink" href="#広告の設定" title="Permanent link">&para;</a></h2>
-<ol>
-<li>メディアユーザIDの設定を行う</li>
-<li>動画広告の初期化を行う</li>
-<li>動画リワード広告のインスタンスを生成</li>
-<li>リスナーの生成</li>
-<li>動画リワード広告の読み込み</li>
-<li>動画リワード広告の再生</li>
-</ol>
 <h3 id="1メディアユーザidの設定を行う">1.メディアユーザIDの設定を行う<a class="headerlink" href="#1メディアユーザidの設定を行う" title="Permanent link">&para;</a></h3>
-<p>サーバーサイドで成果通知を受け取る場合、メディアユーザーIDを設定します。
+<p>サーバーサイドで成果通知を受け取る場合、メディアユーザーIDを設定します。<br />
 メディアユーザIDの設定は、<code>動画リワード広告の読み込み</code>よりも前までに設定する必要があります。</p>
 <div class="codehilite"><pre><span></span><span class="c1">// サーバーサイドで成果通知を受け取る場合、メディアユーザーIDを設定します。</span>
 <span class="c1">// ここでは例として、メールアドレスを指定していますが、任意のID(半角英数記号)が利用可能です。</span>
@@ -1402,7 +1554,8 @@
 </pre></div>
 
 <h3 id="2動画広告の初期化を行う">2.動画広告の初期化を行う<a class="headerlink" href="#2動画広告の初期化を行う" title="Permanent link">&para;</a></h3>
-<p>はじめに、<code>AdstirVideoAds.init()</code>を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。  動画リワード広告と<a href="interstitial.md">全画面インタースティシャル広告</a>を併用する場合は、同時に初期化を行う必要があります。</p>
+<p>はじめに、<code>AdstirVideoAds.init()</code>を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。<br />
+動画リワード広告と<a href="../interstitial/">全画面インタースティシャル広告</a>を併用する場合は、同時に初期化を行う必要があります。</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 使用する動画リワードと全画面インタースティシャルの全てのスポットIDについて、初期化処理を行います。</span>
 <span class="kt">int</span><span class="o">[]</span> <span class="n">spotIds</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
 <span class="n">AdstirVideoAds</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s">&quot;MEDIA-xxxxxx&quot;</span><span class="p">,</span> <span class="n">spotIds</span><span class="p">);</span>
@@ -1568,7 +1721,7 @@
 </pre></div>
 
 <h2 id="ライブラリ詳細">ライブラリ詳細<a class="headerlink" href="#ライブラリ詳細" title="Permanent link">&para;</a></h2>
-<p><a href="../../api/">APIリファレンス</a>をご覧ください。</p>
+<p><a href="../../api/#動画リワード広告">APIリファレンス</a>をご覧ください。</p>
 <h2 id="成果のコールバックurlへの通知">成果のコールバックURLへの通知<a class="headerlink" href="#成果のコールバックurlへの通知" title="Permanent link">&para;</a></h2>
 <p>adstirでは、インセンティブ付与の通知を、任意のコールバックURLに行うことが可能です。
 付与するインセンティブの単位と額は、任意の値に変更可能です。
