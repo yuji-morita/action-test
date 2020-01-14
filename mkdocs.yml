@@ -32,7 +32,9 @@ nav:
             - ネイティブライクバナー: adstir/ad/native/native_banner.md
             - フルカスタマイズ: adstir/ad/native/custom.md
             - ネイティブ動画: adstir/ad/native/native_video.md
-          - 動画リワード: adstir/ad/video.md
+          - 動画リワード:
+            - 実装: adstir/ad/reward/index.md
+            - リワードコールバック: adstir/ad/reward/callback.md
           - 全画面インタースティシャル: adstir/ad/interstitial.md
         - よくある質問: adstir/question.md
     - AdMob: 

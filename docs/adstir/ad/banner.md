@@ -34,4 +34,4 @@ layout.addView(view);
 
 ## ライブラリ詳細
 
-[APIリファレンス](../api/index.md)をご覧ください。
+[APIリファレンス](../api/index.md#バナー広告)をご覧ください。
