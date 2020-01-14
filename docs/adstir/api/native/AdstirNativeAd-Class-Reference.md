@@ -2,10 +2,10 @@
 
 ネイティブ広告のリクエストを行うクラスです。
 
-## Class Methods
+## Constructor
 
 ### AdstirNativeAd
-コンストラクタです。管理画面から取得したメディアIDと枠Noを設定してください。  
+管理画面から取得したメディアIDと枠Noを設定してください。  
 コンテキストには、Activityなどを設定してください。 
 ```java
 public AdstirNativeAd(Context context, String mediaId, int spotNo)
@@ -19,9 +19,11 @@ public AdstirNativeAd(Context context, String mediaId, int spotNo)
 |mediaId|メディアID|
 |spotNo|枠No|
 
+## Instance Methods
+
 ### setSponsoredText
 スポンサー表記の設定をします。
-ネイティブ広告ガイドラインで規定されているスポンサー表記を実装した通りに設定してください。
+[ネイティブ広告ガイドライン](https://github.com/united-adstir/AdStir-Integration-Guide-Web/wiki/%E3%83%8D%E3%82%A4%E3%83%86%E3%82%A3%E3%83%96%E5%BA%83%E5%91%8A%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3)で規定されているスポンサー表記を実装した通りに設定してください。
 ```java
 public void setSponsoredText(String sponsoredText)
 ```
@@ -31,6 +33,45 @@ public void setSponsoredText(String sponsoredText)
 |パラメータ||
 |---|---|
 |sponsoredText|スポンサー表記|
+
+### setListener
+ネイティブ広告のレスポンスを受け取るListenerの設定をします。  
+AdstirNativeAdListenerの詳細については[こちら](AdstirNativeAdListener-Interface-Reference.md)をご覧ください。
+
+```java
+public void setListener(AdstirNativeAdListener listener)
+```
+
+* Parameters
+
+|パラメータ||
+|---|---|
+|listener|リスナー|
+
+### denyVideoOnMobileConnection
+モバイル回線を使用している際に動画広告を拒否するかを設定します。
+```java
+public void denyVideoOnMobileConnection(boolean b)
+```
+
+* Parameters
+
+|パラメータ||
+|---|---|
+|b|trueの際に、モバイル回線の場合には動画広告を拒否します|
+
+### getAd
+ネイティブ広告のリクエストを行います。  
+必ず全ての設定を行ったあとで呼び出してください。  
+```java
+public void getAd()
+```
+
+### destroy
+ネイティブ広告の破棄を行います。  
+```java
+public void destroy()
+```
 
 ### setTitleLength
 
@@ -133,41 +174,3 @@ public void setRating(boolean rating)
 |---|---|
 |rating|レーティングの有無|
 
-### setListener
-ネイティブ広告のレスポンスを受け取るListenerの設定をします。  
-AdstirNativeAdListenerの詳細については[こちら](AdstirNativeAdListener-Interface-Reference.md)をご覧ください。
-
-```java
-public void setListener(AdstirNativeAdListener listener)
-```
-
-* Parameters
-
-|パラメータ||
-|---|---|
-|listener|リスナー|
-
-### denyVideoOnMobileConnection
-モバイル回線を使用している際に動画広告を拒否するかを設定します。
-```java
-public void denyVideoOnMobileConnection(boolean b)
-```
-
-* Parameters
-
-|パラメータ||
-|---|---|
-|b|trueの際に、モバイル回線の場合には動画広告を拒否します|
-
-### getAd
-ネイティブ広告のリクエストを行います。  
-必ず全ての設定を行ったあとで呼び出してください。  
-```java
-public void getAd()
-```
-
-### destroy
-ネイティブ広告の破棄を行います。  
-```java
-public void destroy()
-```

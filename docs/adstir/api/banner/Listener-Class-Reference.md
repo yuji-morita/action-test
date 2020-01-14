@@ -2,7 +2,7 @@
 
 スマートフォンバナー広告用のリスナークラスです。
 
-## Methods
+## Instance Methods
 
 ### onPresentAdScreen
 

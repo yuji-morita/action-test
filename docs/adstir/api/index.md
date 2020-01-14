@@ -5,41 +5,38 @@ adstir SDKのAPIリファレンスです。
 ## バナー広告
 
 * [AdstirMraidView](banner/AdstirMraidView-Class-Reference.md)
-* [AdstirMraidViewDelegate](banner/AdstirMraidViewDelegate-Protocol-Reference.md)
+* [AdSize](banner/AdSize-Class-Reference.md)
+* [Listener](banner/Listener-Class-Reference.md)
 
 ## スワイプインタースティシャル広告
 
 * [AdstirFullscreenView](swipe/AdstirFullscreenView-Class-Reference.md)
-* [AdstirMraidViewDelegate](banner/AdstirMraidViewDelegate-Protocol-Reference.md)
-
-!!! Note    
-    スワイプインタースティシャル広告はバナー広告と同じDelegateを利用できます。
+* [AdstirFullscreenListener](swipe/AdstirFullscreenListener-Class-Reference.md)
 
 ## ネイティブ広告
 
 * [AdstirNativeAd](native/AdstirNativeAd-Class-Reference.md)
-* [AdstirNativeAdDelegate](native/AdstirNativeAdDelegate-Protocol-Reference.md)
+* [AdstirNativeAdListener](native/AdstirNativeAdListener-Interface-Reference.md)
 * [AdstirNativeAdResponse](native/AdstirNativeAdResponse-Class-Reference.md)
-* [AdstirLoadImageDeledateDelegate](native/AdstirLoadImageDeledate-Protocol-Reference.md)
-* [AdstirLoadSmallImageDeledateDelegate](native/AdstirLoadSmallImageDeledate-Protocol-Reference.md)
+* [AdstirLoadImageListener](native/AdstirLoadImageListener-Interface-Reference.md)
+* [AdstirLoadIconListener](native/AdstirLoadIconListener-Interface-Reference.md)
 
 ### ネイティブ動画広告
 
 * [AdstirNativeVideoAd](native/video/AdstirNativeVideoAd-Class-Reference.md)
 * [AdstirNativeVideoView](native/video/AdstirNativeVideoView-Class-Reference.md)
-* [AdstirNativeVideoViewDelegate](native/video/AdstirNativeVideoViewDelegate-Protocol-Reference.md)
+* [AdstirNativeVideoListener](native/video/AdstirNativeVideoListener-Interface-Reference.md)
 
-## 動画視聴型インセンティブ広告及び全画面インタースティシャル広告の初期化
+## 動画リワード広告及び全画面インタースティシャル広告の初期化
 
 * [AdstirVideoAds](AdstirVideoAds-Class-Reference.md)
 
-## 動画視聴型インセンティブ広告
+## 動画リワード広告
 
-* [AdstirVideoReward](video/AdstirVideoReward-Class-Reference.md)
-* [AdstirVideoRewardDelegate](video/AdstirVideoRewardDelegate-Protocol-Reference.md)
+* [AdstirVideoReward](reward/AdstirVideoReward-Class-Reference.md)
+* [AdstirVideoRewardListener](reward/AdstirVideoRewardListener-Interface-Reference.md)
 
 ## 全画面インタースティシャル広告
 
 * [AdstirInterstitial](interstitial/AdstirInterstitial-Class-Reference.md)
-* [AdstirInterstitialDelegate](interstitial/AdstirInterstitialDelegate-Protocol-Reference.md)
-
+* [AdstirInterstitialListener](interstitial/AdstirInterstitialListener-Interface-Reference.md)

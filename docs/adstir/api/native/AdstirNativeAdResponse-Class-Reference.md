@@ -2,7 +2,7 @@
 
 ネイティブ広告のレスポンスクラスです。  
 
-## Class Methods
+## Instance Methods
 
 ### getTitle
 タイトルの文字列を返却します。

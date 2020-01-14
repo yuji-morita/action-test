@@ -1,6 +1,6 @@
 # AdstirNativeVideoListener Interface Reference
 
-ネイティブ動画広告のイベントを通知するリスナークラスです。  
+ネイティブ動画広告のイベントを通知するリスナーです。  
 
 ## Methods
 
@@ -12,7 +12,7 @@ public void onLoad();
 ```
 
 ### onFailed
-ネイティブ動画広告の読み込みに失敗した時に呼び出されるメソッドです。
+ネイティブ動画広告の読み込みに失敗した時に呼び出されるメソッドです。  
 ErrorCodeの詳細については[こちら](#error-code)をご覧ください。
 ```java
 public void onFailed(ErrorCode code);

@@ -67,10 +67,10 @@ nav:
       - AdstirVideoAds: adstir/api/AdstirVideoAds-Class-Reference.md
     - 動画リワード:
       - AdstirVideoReward: adstir/api/reward/AdstirVideoReward-Class-Reference.md
-      - AdstirVideoRewardDelegate: adstir/api/reward/AdstirVideoRewardDelegate-Protocol-Reference.md
+      - AdstirVideoRewardListener: adstir/api/reward/AdstirVideoRewardListener-Interface-Reference.md
     - 全画面インタースティシャル:
       - AdstirInterstitial: adstir/api/interstitial/AdstirInterstitial-Class-Reference.md
-      - AdstirInterstitialDelegate: adstir/api/interstitial/AdstirInterstitialDelegate-Protocol-Reference.md
+      - AdstirInterstitialListener: adstir/api/interstitial/AdstirInterstitialListener-Interface-Reference.md
 
 theme:
   name: 'material'

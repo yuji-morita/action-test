@@ -2,8 +2,7 @@
 
 ネイティブ動画のクラスです。  
 
-## Class Methods
-
+## Instance Methods
 
 ### isVideoAd
 

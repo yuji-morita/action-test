@@ -1,6 +1,6 @@
 # AdstirNativeAdListener Interface Reference
 
-ネイティブ広告用のリスナークラスです。  
+ネイティブ広告用のリスナーです。  
 AdstirNativeAdListenerのメソッドはすべてバックグラウンドスレッドで動作します。  
 UIを操作する場合はActivity.runOnUiThreadを利用してください。  
 

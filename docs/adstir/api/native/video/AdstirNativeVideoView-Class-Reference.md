@@ -19,7 +19,7 @@ public void load(AdstirNativeVideo adstirNativeVideo)
 
 ### setAdstirNativeVideoListener
 ネイティブ動画広告のイベントを受け取るリスナーの設定をします。
-AdstirNativeVideoListenerの詳細については[こちら]()をご覧ください。
+AdstirNativeVideoListenerの詳細については[こちら](AdstirNativeVideoListener-Interface-Reference.md)をご覧ください。
 
 ```java
 public void setAdstirNativeVideoListener(AdstirNativeVideoListener listener)

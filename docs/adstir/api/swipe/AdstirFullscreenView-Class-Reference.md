@@ -2,11 +2,10 @@
 
 スワイプインタースティシャル広告を呼び出すクラスです。
 
-## Class Methods
-
+## Constructor
 
 ### AdstirFullscreenView
-コンストラクタです。管理画面から取得したメディアIDと枠Noを設定してください。
+管理画面から取得したメディアIDと枠Noを設定してください。
 
 ```java
 public AdstirFullscreenView(Activity activity, String mediaId, int spotNo)
@@ -16,9 +15,12 @@ public AdstirFullscreenView(Activity activity, String mediaId, int spotNo)
 
 |パラメータ||
 |---|---|
-|activity|スワイプインタースティシャル広告を配置するアクティビティ|
+|activity|アクティビティ|
 |mediaId|メディアID|
 |spotNo|枠No|
+
+
+## Instance Methods
 
 ### setListener
 リスナーを設定します。

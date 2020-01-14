@@ -1,104 +1,130 @@
 # AdstirInterstitial Class Reference
+全画面インタースティシャル広告を呼び出すクラスです。
 
-全画面インタースティシャル広告を呼び出すためのクラスです。
+## Constructor
+### AdstirInterstitial
+管理画面から取得したメディアIDと枠Noを設定してください。
 
-## Class Methods
-
-* [+setTestModeEnabled:](#settestmodeenabled)
-* [+testModeEnabled](#testmodeenabled)
-
-***
-
-### +setTestModeEnabled:
-テストモードの有効/無効を切り替えます。有効にする場合はYES、無効にする場合はNOを設定してください。デフォルトではテストモードは無効になっています。
-```objc
-+ (void)setTestModeEnabled:(BOOL)enabled;
+```java
+public AdstirInterstitial(Activity activity, String mediaId, int spotNo) 
 ```
 
-#### Parameters
-* _enabled_
-    * テストモードの有効/無効
+* Parameters
 
-***
+|パラメータ||
+|---|---|
+|activity|アクティビティ|
+|mediaId|メディアID|
+|spotNo|枠No|
 
-### +testModeEnabled
-テストモードの有効/無効を取得します。
 
-```objc
-+ (BOOL)testModeEnabled
+## Static Methods
+
+### init
+
+!!! warning "Deprecated"
+    このメソッドの代わりに[こちら](../AdstirVideoAds-Class-Reference.md#init)をご利用ください
+
+広告の初期化を行います。[コンストラクタ](#adstirinterstitial)より前に呼び出してください。
+
+
+```java
+public static void init(Activity activity, String mediaId, int[] spotNoArray)
 ```
 
-#### Returns
-* _enabled_
-    * テストモードの有効/無効
+* Parameters
 
-***
+|パラメータ||
+|---|---|
+|activity|アクティビティ|
+|mediaId|メディアID|
+|spotNoArray|枠Noの配列|
+
 
 ## Instance Methods
-* [-initWithMedia:spot:](#-initwithmediaspot)
-* [-load](#-load)
-* [-canShow](#-canshow)
-* [-showFromViewController:](#-showfromviewcontroller)
 
-***
+### setAdstirInterstitialListener
 
-### -initWithMedia:spot:  
-インスタンスの初期化を行います。[+prepareWithMedia:spots:](#preparewithmediaspots)で初期化したIDと別のIDは使用できません。
-```objc
-- (instancetype)initWithMedia:(NSString *)media spot:(NSUInteger)spot
+リスナーを設定します。広告の読み込み時、リワードの取得時に実行する処理などを指定することが出来ます。  
+AdstirInterstitialListenerの詳細については[こちら](AdstirInterstitialListener-Interface-Reference.md)をご覧ください。
+
+```java
+public void setAdstirInterstitialListener(AdstirInterstitialListener listener)
 ```
 
-#### Parameters
+* Parameters
 
-* _media_
-    * メディアID
+|パラメータ||
+|---|---|
+|listener|リスナー|
 
-* _spot_
-    * スポットID
+### setAppVersion
 
+御社のアプリのバージョンを指定することができます。任意の文字列を指定してください。
 
-#### Returns
-
-* _instancetype_
-    * 初期化済みのAdstirInterstitialのインスタンス
-
-***
-
-### -load
-広告の読み込みを行います。読み込み完了等の通知が必要な場合は[AdstirInterstitial](AdstirInterstitialDelegate-Protocol-Reference.md)を実装してください。
-
-
-```objc
--　(void)load
+```java
+public void setAppVersion(String appVersion)
 ```
 
-***
+* Parameters
 
-### -canShow
-広告が再生できる場合はYES、できない場合はNOを返します。
+|パラメータ||
+|---|---|
+|appVersion|アプリのバージョン|
 
-```objc
-- (BOOL)canShow
+### setLocation
+
+ユーザーの位置情報を指定することが出来ます。
+
+```java
+public void setLocation(Location location)
 ```
 
-#### Returns
+* Parameters
 
-* _BOOL_
-    * 再生の可否
+|パラメータ||
+|---|---|
+|location|Locationインスタンス|
 
-***
+### load
 
-### -showFromViewController:
-広告の再生を行います。再生の開始等の通知が必要な場合は[AdstirInterstitialDelegate](AdstirInterstitialDelegate-Protocol-Reference.md)を実装してください。
+設定された情報にもとづいて、広告の読み込みを行います。
 
-
-```objc
-- (void)showFromViewController:(UIViewController *)viewController
+```java
+public void load()
 ```
 
-#### Parameters
+### show
 
-* _viewController_
-    * 呼び出し元のViewController
+ビデオの再生を開始します。
 
-***
+```java
+public void show()
+```
+
+### pause
+
+動作を一時停止します。
+ActivityのonPauseでご使用ください。
+
+```java
+public void pause()
+```
+
+### resume
+
+動作の一時停止を解除します。
+ActivityのonResumeでご使用ください。
+
+```java
+public void resume()
+```
+
+### destroy
+
+インスタンスを破棄します。
+ActivityのonDestoryでご使用ください。
+
+```java
+public void destroy()
+```

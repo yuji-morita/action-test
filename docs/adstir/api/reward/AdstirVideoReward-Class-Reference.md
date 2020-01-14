@@ -1,13 +1,29 @@
 # AdstirVideoReward Class Reference
 
-動画視聴型インセンティブ広告を呼び出すためのクラスです。
+動画リワード広告を呼び出すためのクラスです。
+
+## Constructor
+### AdstirVideoReward
+管理画面から取得したメディアIDと枠Noを設定してください。
+
+```java
+public AdstirVideoReward(Activity activity, String mediaId, int spotNo) 
+```
+
+* Parameters
+
+|パラメータ||
+|---|---|
+|activity|アクティビティ|
+|mediaId|メディアID|
+|spotNo|枠No|
 
 ## Static Methods
 
 ### init
 
 !!! warning "Deprecated"
-    このメソッドの代わりに[こちら]()をご利用ください
+    このメソッドの代わりに[こちら](../AdstirVideoAds-Class-Reference.md#init)をご利用ください
 
 広告の初期化を行います。[コンストラクタ](#AdstirVideoReward)より前に呼び出してください。
 
@@ -26,7 +42,7 @@ public static void init(Activity activity, String mediaId, int[] spotNoArray)
 ### setMediaUserID
 
 !!! warning "Deprecated"
-    このメソッドの代わりに[こちら]()をご利用ください
+    このメソッドの代わりに[こちら](../AdstirVideoAds-Class-Reference.md#setmediauserid)をご利用ください
 
 インセンティブを付与するユーザーのIDを指定します。
 サーバーサイドで成果通知を受け取る場合は指定が必須となります。
@@ -44,25 +60,9 @@ public static void setMediaUserID(String userId)
 
 ## Instance Methods
 
-### AdstirVideoReward
-
-コンストラクタです。
-
-```java
-public AdstirVideoReward(Activity activity, String mediaId, int spotNo) 
-```
-
-* Parameters
-
-|パラメータ||
-|---|---|
-|activity|アクティビティ|
-|mediaId|メディアID|
-|spotNo|枠No|
-
 ### setAdstirVideoRewardListener
 リスナーを設定します。広告の読み込み時、リワードの取得時に実行する処理などを指定することが出来ます。  
-AdstirVideoRewardListenerの詳細については[[こちら]()をご覧ください。
+AdstirVideoRewardListenerの詳細については[こちら](AdstirNativeVideoListener-Interface-Reference.md)をご覧ください。
 
 ```java
 public void setAdstirVideoRewardListener(AdstirVideoRewardListener listener)

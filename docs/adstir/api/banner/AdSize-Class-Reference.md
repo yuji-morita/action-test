@@ -4,7 +4,6 @@
 
 ## Fields
 
-
 ### Size320x50
 横320x縦50の広告枠サイズ用のオブジェクト
 ```java
@@ -35,10 +34,10 @@ public static final AdSize Size300x100
 public static final AdSize SizeFullScreen
 ```
 
-## Methods
+## Constructor
 
 ### Adsize
-コンストラクタです。管理画面で登録した枠サイズと同じものを設定してください。
+管理画面で登録した枠サイズと同じものを設定してください。
 ```java
 public AdSize(int width, int height)
 ```

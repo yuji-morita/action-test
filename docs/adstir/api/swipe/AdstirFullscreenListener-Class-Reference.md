@@ -1,8 +1,7 @@
 # AdstirFullscreenListener Class Reference
 スワイプインタースティシャル広告用のリスナークラスです。
 
-## Methods
-
+## Instance Methods
 
 ### onLeaveApplication
 スワイプインタースティシャル広告によってアプリケーションから離れた時に呼び出されるメソッドです。
