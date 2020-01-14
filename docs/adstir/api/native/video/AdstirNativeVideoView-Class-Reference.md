@@ -1,31 +1,39 @@
 # AdstirNativeVideoView Class Reference
 
-ネイティブ動画広告のクラスです。
-
-## Properties
-
-* [delegate](#delegate)
-
-### delegate
-ネイティブ動画広告のイベントを受け取るDelegateを設定してください。  
-Delegateの詳細は[こちら](AdstirNativeVideoViewDelegate-Protocol-Reference.md]をご覧ください。
-
-```objc
-@property (nonatomic, weak) id<AdstirNativeVideoViewDelegate> delegate;
-```
+ネイティブ動画広告のクラスです。  
 
 ## Instance Methods
 
-* [-loadAd:](#-loadAd)
+### load
+AdstirNativeVideoをセットして、動画広告を読み込みます。
 
-***
-
-### -loadAd
-
-Viewに動画広告を読み込みます。
-
-```objc
-- (void)loadAd:(AdstirNativeVideoAd *)ad;
+```java
+public void load(AdstirNativeVideo adstirNativeVideo)
 ```
 
-***
+* Parameters
+
+|パラメータ||
+|---|---|
+|adstirNativeVideo|動画の再生を行うAdstirNativeVideoのインスタンス|
+
+### setAdstirNativeVideoListener
+ネイティブ動画広告のイベントを受け取るリスナーの設定をします。
+AdstirNativeVideoListenerの詳細については[こちら]()をご覧ください。
+
+```java
+public void setAdstirNativeVideoListener(AdstirNativeVideoListener listener)
+```
+
+* Parameters
+
+|パラメータ||
+|---|---|
+|listener|リスナー|
+
+### release
+動画広告を解放します。
+
+```java
+public void release()
+```

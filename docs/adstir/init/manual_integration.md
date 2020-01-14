@@ -25,6 +25,6 @@
 
 ```groovy hl_lines="1 3"
 dependencies {
-    implementation 'com.google.android.gms:play-services-ads:x.x.x'
+    implementation 'com.google.android.gms:play-services-ads-identifier:x.x.x'
 }
 ```

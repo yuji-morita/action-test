@@ -1,20 +1,21 @@
 # AdstirNativeVideoAd Class Reference
 
-ネイティブ動画広告のオブジェクトです。
+ネイティブ動画のクラスです。  
 
-## Instance Methods
+## Class Methods
 
-* [-isVideoAd](#-isVideoAd)
 
-***
+### isVideoAd
 
-### -isVideoAd
+動画広告かどうかを返します。
+falseの時はViewにバナー広告が読み込まれます。
 
-動画の案件かどうかを判定します。
-NOの時はViewにバナー広告が読み込まれます。
-
-```objc
-- (BOOL)isVideoAd;
+```java
+public boolean isVideoAd()
 ```
 
-***
+* Returns
+
+|戻り値||
+|---|---|
+|boolean|動画広告であればtrue|

@@ -1,182 +1,167 @@
 # AdstirNativeAdResponse Class Reference
 
-ネイティブ広告のレスポンスクラスです。
+ネイティブ広告のレスポンスクラスです。  
 
-## Properties
+## Class Methods
 
-* [title](#title)
-* [rating](#rating)
-* [cta](#cta)
-* [loadImageDelegate](#loadimagedelegate)
-* [loadSmallImageDelegate](#loadsmallimagedelegate)
-
-***
-
-### title
-
+### getTitle
 タイトルの文字列を返却します。
-```objc
-@property (nonatomic, readonly, copy) NSString* title;
+```java
+public String getTitle()
 ```
 
-***
+* Returns
 
-### descriptionText
+|戻り値||
+|---|---|
+|String|タイトル|
+
+
+### getDescription
 説明文の文字列を返却します。
-```objc
-@property (nonatomic, readonly, copy) NSString* descriptionText;
+```java
+public String getDescription()
 ```
 
-***
+* Returns
 
-### rating
-レーティングを返却します。
-```objc
-@property (nonatomic, readonly, assign) float rating;
-```
+|戻り値||
+|---|---|
+|String|説明文|
 
-***
-
-### cta
+### getCta
 CTAボタンテキストの文字列を返却します。
-```objc
-@property (nonatomic, readonly, copy) NSString* cta;
+```java
+public String getCta()
 ```
 
-***
+* Returns
 
+|戻り値||
+|---|---|
+|String|CTAボタンテキスト|
 
-### loadImageDelegate
-バナー画像をNSDataで受け取るDelegateを設定してください。  
-Delegateの詳細は[こちら](AdstirLoadImageDeledate-Protocol-Reference.md)をご覧ください。
-
-```objc
-@property (nonatomic, weak) id<AdstirLoadImageDeledate> loadImageDelegate;
+### getImage
+バナー画像URLを返却します。
+```java
+public String getImage()
 ```
 
-***
+* Returns
 
-### loadSmallImageDelegate
-アイコン画像をNSDataで受け取るDelegateを設定してください。   
-Delegateの詳細は[こちら](AdstirLoadSmallImageDeledate-Protocol-Reference.md)をご覧ください。
-```objc
-@property (nonatomic, weak) id<AdstirLoadSmallImageDeledate> loadSmallImageDelegate;
+|戻り値||
+|---|---|
+|String|バナー画像URL|
+
+### bindImageToImageView
+バナー画像をImageViewに対して設定します。
+```java
+public void bindImageToImageView(Activity activity, ImageView imageView)
 ```
 
-***
+* Parameters
 
+|パラメータ||
+|---|---|
+|activity|アクティビティ|
+|imageView|バナー画像を表示するImageView|
 
-## Instance Methods
-* [-bindImageToImageView:](#-bindimagetoimageview)
-* [-bindImageToButton:](#-bindimagetobutton)
-* [-getImageAsByte](#-getimageasbyte)
-* [-bindSmallImageToImageView:](#-bindsmallimagetoimageview)
-* [-bindSmallImageToButton:](#-bindsmallimagetobutton)
-* [-bindOptoutImageToButton:](#-bindoptoutimagetobutton)
-* [-getSmallImageAsByte](#-getsmallimageasbyte)
-* [-click](#-click)
-* [-clickOptout](#-clickOptout)
-* [-impression](#-impression)
-
-***
-
-### -bindImageToImageView:
-バナー画像をUIImageViewに対して設定します。
-```objc
-- (void)bindImageToImageView:(UIImageView *)imageView;
-```
-### Parameters
-* _imageView_
-    * バナー画像を設定するUIImageView
-
-***
-
-### -bindImageToButton:
-バナー画像をUIButtonに対して設定します。
-```objc
-- (void)bindImageToButton:(UIButton *)button;
+### getImageAsBytes
+バナー画像のバイト配列での取得を要求します。
+```java
+public void getImageAsBytes()
 ```
 
-#### Parameters
-* _button_
-    * バナー画像を設定するUIButton
-
-*** 
-
-### -getImageAsByte
-バナー画像のNSDataでの取得を要求します。
-```objc
-- (void)getImageAsByte;
+### setOnLoadImageListener
+バナー画像をバイト配列で取得するListenerを設定します。  
+AdstirLoadImageListenerの詳細については[こちら](AdstirLoadImageListener-Interface-Reference.md)をご覧ください。
+```java
+public void setOnLoadImageListener(AdstirLoadImageListener listener)
 ```
 
-***
+* Parameters
 
-### -bindSmallImageToImageView:
-アイコン画像をUIImageViewに対して設定します。
-```objc
-- (void)bindSmallImageToImageView:(UIImageView *)imageView;
+|パラメータ||
+|---|---|
+|listener|リスナー|
+
+### getIcon
+アイコン画像URLを返却します。
+```java
+public String getIcon()
 ```
 
-#### Parameters
-* _imageView_
-    * アイコン画像を設定するUIImageView
+* Returns
 
-***
+|戻り値||
+|---|---|
+|String|アイコン画像URL|
 
-### -bindSmallImageToButton:
-アイコン画像をUIButtonに対して設定します。
-```objc
-- (void)bindSmallImageToButton:(UIButton *)button;
+### bindIconToImageView
+アイコン画像をImageViewに対してBitmapを設定します。
+```java
+public void bindIconToImageView(Activity activity, ImageView imageView)
 ```
 
-#### Parameters
-* _button_
-    * アイコン画像を設定するUIButton
+* Parameters
 
-*** 
+|パラメータ||
+|---|---|
+|activity|アクティビティ|
+|imageView|アイコン画像を表示するImageView|
 
-### -bindOptoutImageToButton:
-iマーク画像をUIButtonに対して設定します。
-```objc
-- (void)bindOptoutImageToButton:(UIButton *)button;
-```
-#### Parameters
-* _button_
-    * iマーク画像を設定するUIButton
-
-*** 
-
-
-## -getSmallImageAsByte
-アイコン画像のNSDataでの取得を要求します。
-```objc
-- (void)getSmallImageAsByte;
+### getIconAsBytes
+アイコン画像のバイト配列での取得を要求します。
+```java
+public void getIconAsBytes()
 ```
 
-*** 
 
-## -click
+### setOnLoadIconListener
+アイコン画像をバイト配列で取得するListenerを設定します。  
+AdstirLoadIconListenerの詳細については[こちら](AdstirLoadIconListener-Interface-Reference.md)をご覧ください。
+```java
+public void setOnLoadIconListener(AdstirLoadIconListener listener)
+```
+
+* Parameters
+
+|パラメータ||
+|---|---|
+|listener|リスナー|
+
+### getRating
+レーティングを返却します。
+```java
+public double getRating()
+```
+
+* Returns
+
+|戻り値||
+|---|---|
+|double|レーティング|
+
+### getVideo
+AdstirNativeVideoオブジェクトを返却します。
+```java
+public AdstirNativeVideo getVideo()
+```
+
+* Returns
+
+|戻り値||
+|---|---|
+|AdstirNativeVideo|AdstirNativeVideoオブジェクト|
+
+### click
 広告がクリックされた際clickメソッドを必ず呼び出してください。
-このメソッドが呼び出されると、自動的にランディングページに遷移します。
-```objc
-- (void)click;
+```java
+public void click()
 ```
 
-***
-
-## -clickOptout
-このメソッドが呼び出されると、自動的にオプトアウトページに遷移します。
-```objc
-- (void)click;
+### impression
+広告表示する際impressionメソッドを必ず呼び出してください。
+```java
+public void impression()
 ```
-
-***
-
-## -impression
-広告の表示回数をカウントします。
-このメソッドを呼び出さずにクリックメソッドを呼び出した場合、正常にクリック回数がカウントされない場合があります。
-```objc
-- (void)impression;
-```
-
-***

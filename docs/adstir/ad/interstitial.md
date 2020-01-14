@@ -2,353 +2,188 @@
 
 動画 / 静止画 による全画面広告の導入方法です。
 
-## 1. 動画広告の初期化を行う
+## 対応OS
 
-`AdstirVideoAds prepareWithMedia`を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。動画リワード広告とフルスクリーン広告を併用する場合は、同時に初期化を行う必要があります。
+Android4.4以上
 
-```objc
-[AdstirVideoAds prepareWithMedia:@"メディアID" spots:@[@枠No1, @枠No2]];
+## 広告の設定
+
+1. 動画広告の初期化を行う
+1. 全画面インタースティシャル広告のインスタンスを生成
+1. リスナーの生成
+1. 全画面インタースティシャル広告の読み込み
+1. 全画面インタースティシャル広告の再生
+
+### 1.動画広告の初期化を行う
+
+はじめ、`AdstirVideoAds.init()`を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。　　[動画リワード広告](reward/index.md)と全画面インタースティシャル広告を併用する場合は、同時に初期化を行う必要があります。
+
+```java
+// 使用する動画リワードと全画面インタースティシャルの全てのスポットIDについて、初期化処理を行います。
+int[] spotIds = { 1, 2 };
+AdstirVideoAds.init(this, "MEDIA-xxxxxx", spotIds);
 ```
 
-## 2. フルスクリーン広告のインスタンスを生成
+### 2.全画面インタースティシャル広告のインスタンスを生成
 
 `AdstirInterstitial`のインスタンスを生成します。
-```objc
-AdstirInterstitial *interstitial = [[AdstirInterstitial alloc] initWithMedia:@"メディアID" spot:枠No];
+```java
+// スポットIDごとにインスタンスを生成します。ここでは1についてのみ生成します。
+AdstirInterstitial adstirInterstitial = new AdstirInterstitial(this, "MEDIA-xxxxxx", 2);
 ```
 
-## 3. デリゲートの実装(オプション)
+### 3.リスナーの生成
 
-```objc
+全画面インタースティシャル広告のイベント通知を行うリスナーのインスタンスを生成します。
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-        :
-    interstitial.delegate = self;
-        :
-}
-
-/** インタースティシャル広告の準備が完了した際に呼び出されます */
-- (void)adstirInterstitialDidLoad:(AdstirInterstitial * __asadnonnull)interstitial
-{
-}
-
-/** インタースティシャル広告の準備に失敗した際に呼び出されます */
-- (void)adstirInterstitial:(AdstirInterstitial * __asadnonnull)interstitial didFailToLoadWithError:(NSError * __asadnonnull)error
-{
-}
-
-/** インタースティシャル広告が表示された際に呼び出されます */
-- (void)adstirInterstitialDidShow:(AdstirInterstitial * __asadnonnull)interstitial
-{
-}
-
-/** インタースティシャル広告の表示に失敗した際に呼び出されます */
-- (void)adstirInterstitial:(AdstirInterstitial * __asadnonnull)interstitial didFailToShowWithError:(NSError * __asadnonnull)error
-{
-}
-
-/** インタースティシャル広告が閉じられたときに呼び出されます */
-- (void)adstirInterstitialDidClose:(AdstirInterstitial * __asadnonnull)interstitial
-{
-}
-```
-
-## 4. フルスクリーン広告の読み込み
-
-フルスクリーン広告の読み込みを行います。
-
-```objc
-[interstitial load];
-```
-
-## 5. フルスクリーン広告の再生
-
-読み込みが完了したフルスクリーン広告を再生します。
-動画の再生を行うViewControllerを渡してください。
-動画の再生後、もう一度動画を再生するためには`4.フルスクリーン広告の読み込み`を行う必要があります。
-
-```objc
-if (self.interstitial.canShow) {
-    [self.interstitial showFromViewController:self];
-}
-```
-
-## SDKの実装例
-
-ここでは、単純な実装についてのサンプルを提示します。
-まず、Storyboard上に、`UIButton`と`UILabel`を配置し、`UIButton`をのOutletとActionを`showInterstitialButton`と`showInterstitialButtonDidTouchUpInside`にそれぞれ接続し、`UILabel`のOutletを`statusLabel`に接続してください。
-
-- AppDelegate
-
-```Objective-c tab=
-// ...
-@import AdstirAds;
-// ...
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    /* 他の初期化コード */
-
-    // メディアIDと、このアプリ内で利用する動画インセンティブメニューの枠IDとインタースティシャル広告の枠IDをすべて指定します。
-    // 動画リワードとインタースティシャルを併用する場合はどちらの枠Noも指定してください。
-    [AdstirVideoAds prepareWithMedia:@"メディアID" spots:@[@枠No]];
-
-    return YES;
-}
-```
-
-```swift tab=
-// ...
-import AdstirAds
-// ...
-class AppDelegate: UIResponder, UIApplicationDelegate {
-// ...
-   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        /* 他の初期化コード */
-
-        // メディアIDと、このアプリ内で利用するイン対すティシャル広告のメディアIDと、枠Noをすべて指定します。
-        AdstirVideoAds.prepare(withMedia:"メディアID", spots: [枠No, 枠No])
-        return true
+```java
+// リスナーの定義
+private AdstirInterstitialListener listener = new AdstirInterstitialListener() {
+    @Override
+    public void onLoad(int spot_no) {
+      // ロードが完了した時の処理を記述できます。
     }
-// ...
-}
-```
-
-- ViewController
-
-```Objective-c tab=
-// ...
-@import AdstirAds;
-// ...
-@interface ViewController () <AdstirInterstitialDelegate>
-@property (weak, nonatomic) IBOutlet UIButton *showInterstitialButton;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-
-@property (strong, nonatomic) AdstirInterstitial *interstitial;
-
-@end
-
-@implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-
-    AdstirInterstitial *interstitial = [[AdstirInterstitial alloc] initWithMedia:@"メディアID" spot:枠No];
-    interstitial.delegate = self;
-    self.interstitial = interstitial;
-    
-    self.statusLabel.text = @"Loading...";
-    [interstitial load];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/** フルスクリーン広告を表示するボタンのターゲットメソッド */
-- (IBAction)showInterstitialButtonDidTouchUpInside:(id)sender {
-    self.showInterstitialButton.enabled = NO;
-    if (self.interstitial.canShow) {
-        [self.interstitial showFromViewController:self];
+    @Override
+    public void onFailed(int spot_no) {
+      // スタートが失敗した時にやりたい処理を記述できます。
     }
-}
+    @Override
+    public void onStart(int spot_no) {
+      // 動画が再生された時にやりたい処理を記述できます。
+    }
+    @Override
+    public void onStartFailed(int spot_no) {
+      // 動画の再生が失敗した時にやりたい処理を記述できます。
+    }
+    @Override
+    public void onFinished(int spot_no) {
+      // 動画の再生が終了した時にやりたい処理を記述できます。
+    }
+    @Override
+    public void onClose(int spot_no) {
+      // 動画が閉じられた時にやりたい処理を記述できます。
+    }
+  };
 
-/**
- Called when get ready to show ad
- 
- インタースティシャル広告の準備が完了した際に呼び出されます
- */
-- (void)adstirInterstitialDidLoad:(AdstirInterstitial * __asadnonnull)interstitial
-{
-    NSLog(@"広告の読み込みが完了しました");
-
-    self.statusLabel.text = @"Loaded";
-    self.showInterstitialButton.enabled = YES;
-}
-
-/**
- Called when failed to load ad
- 
- インタースティシャル広告の準備に失敗した際に呼び出されます
- */
-- (void)adstirInterstitial:(AdstirInterstitial * __asadnonnull)interstitial didFailToLoadWithError:(NSError * __asadnonnull)error
-{
-    NSLog(@"広告の読み込みに失敗しました");
-
-    // 15秒待ってから再読み込みします
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.statusLabel.text = @"Loading...";
-        [self.interstitial load];
-    });
-}
-
-/**
- Called when interstitial ad is shown
- 
- インタースティシャル広告が表示された際に呼び出されます
- */
-- (void)adstirInterstitialDidShow:(AdstirInterstitial * __asadnonnull)interstitial
-{
-    NSLog(@"広告が表示されました");
-    
-    self.statusLabel.text = @"";
-}
-
-/**
- Called when failed to show ad
- 
- インタースティシャル広告の表示に失敗した際に呼び出されます
- */
-- (void)adstirInterstitial:(AdstirInterstitial * __asadnonnull)interstitial didFailToShowWithError:(NSError * __asadnonnull)error
-{
-    NSLog(@"広告の表示に失敗しました");
-    
-    // 15秒待ってから再読み込みします
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.statusLabel.text = @"Loading...";
-        [self.interstitial load];
-    });
-}
-
-/**
- Called when ad was closed
- 
- インタースティシャル広告が閉じられたときに呼び出されます
- */
-- (void)adstirInterstitialDidClose:(AdstirInterstitial * __asadnonnull)interstitial
-{
-    NSLog(@"広告が閉じられました");
-
-    // 15秒待ってから再読み込みします
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.statusLabel.text = @"Loading...";
-        [self.interstitial load];
-    });
-}
-
-- (void)dealloc
-{
-    // デリゲートを解放します。解放を忘れるとクラッシュする可能性があります。
-    self.interstitial.delegate = nil;
-    // 広告の制御インスタンスを解放します。
-    self.interstitial = nil;
-}
-
-@end
+// 上で定義したリスナーを登録します。
+adstirInterstitial.setAdstirInterstitialListener(listener);
 ```
 
+### 4.全画面インタースティシャル広告の読み込み
+
+全画面インタースティシャル広告の読み込みを行います。
+
+```java
+// 全画面インタースティシャル広告を読み込みます。
+adstirInterstitial.load();
+```
+
+### 5.全画面インタースティシャル広告の再生
+
+読み込みが完了した全画面インタースティシャル広告を再生します。
+動画の再生後、もう一度動画を再生するためには`4.全画面インタースティシャル広告の読み込み`を行う必要があります。
+
+```java
+if(adstirInterstitial.canShow()){
+    adstirInterstitial.show();
+}
+```
+
+## 全画面インタースティシャル広告の実装例
 
 
-```swift tab=
-import UIKit
-import AdstirAds
-
-class ViewController: UIViewController, AdstirInterstitialDelegate {
-
-    @IBOutlet weak var showInterstitialButton: UIButton!
-    @IBOutlet weak var statusLabel: UILabel!
-
-    var interstitial: AdstirInterstitial?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        self.showInterstitialButton.enabled = false
-
-        // メディアIDと、このアプリ内で利用する動画インセンティブメニューの枠IDとインタースティシャル広告の枠IDをすべて指定します。
-        // 動画リワードとインタースティシャルを併用する場合はどちらの枠Noも指定してください。
-        let interstitial = AdstirInterstitial.init(media: "メディアID", spot: 枠No)
-        interstitial?.delegate = self;
-        self.interstitial = interstitial
-
-        self.statusLabel.text = "Loading...";
-        interstitial?.load()
+```java
+// 下記のインポートが必要です
+import com.ad_stir.interstitial.AdstirVideoAds;
+import com.ad_stir.interstitial.AdstirInterstitial;
+import com.ad_stir.interstitial.AdstirInterstitialListener;
+  ...
+public class MainActivity extends AppCompatActivity {
+  ...
+  private AdstirInterstitial adstirInterstitial;
+  private Button showButton;
+  ...
+  // 全画面インタースティシャルのリスナーです
+  private AdstirInterstitialListener listener = new AdstirInterstitialListener() {
+    @Override
+    public void onLoad(int spot_no) {
+      // ロードが完了した時の処理を記述できます。
+      // この例ではロードが完了した時に再生ボタンを有効にします。 
+      showButton.setEnabled(true);
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @Override
+    public void onFailed(int spot_no) {
+      // スタートが失敗した時の処理を記述できます。
     }
+    @Override
+    public void onStart(int spot_no) {
+      // 動画が再生された時の処理を記述できます。
+    }
+    @Override
+    public void onStartFailed(int spot_no) {
+      // 動画の再生が失敗した時の処理を記述できます。
+    }
+    @Override
+    public void onFinished(int spot_no) {
+      // 動画の再生が終了した時の処理を記述できます。
+    }
+    @Override
+    public void onClose(int spot_no) {
+      // 動画が閉じられた時の処理を記述できます。
+    }
+  };
 
-    @IBAction func showInterstitialButtonDidTouchUpInside(sender: AnyObject) {
-        self.showInterstitialButton.enabled = false
+  @Override
+  // 広告の読み込み
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.xxxx);
 
-        if (self.interstitial != nil && self.interstitial!.canShow()) {
-            self.interstitial?.showFromViewController(self)
+    // 使用する動画リワードと全画面インタースティシャルの全てのスポットIDについて、初期化処理を行います。
+    int[] spotIds = { 1, 2 };
+    AdstirVideoAds.init(this, "MEDIA-xxxxxx", spotIds);
+    // スポットIDごとにインスタンスを生成します。ここでは1についてのみ生成します。
+    adstirInterstitial = new AdstirInterstitial(this, "MEDIA-xxxxxx", 1);
+    // 上で定義したリスナーを登録します。
+    adstirInterstitial.setAdstirInterstitialListener(listener);
+    // 広告を読み込みます。
+    adstirInterstitial.load();
+
+    showButton = (Button) findViewById(show_button);
+    showButton.setEnabled(false);
+    showButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        // ボタンをタップした時に再生を開始します
+        if (adstirInterstitial.canShow()) {
+          adstirInterstitial.show();
         }
-    }
-    
-    /**
-     Called when get ready to show ad
-     
-     インタースティシャル広告の準備が完了した際に呼び出されます
-     */
-    func adstirInterstitialDidLoad(interstitial: AdstirInterstitial) {
-        NSLog("広告の読み込みが完了しました")
+      }
+    });
+  }
 
-        self.statusLabel.text = "Loaded"
-        self.showInterstitialButton.enabled = true
-    }
-    /**
-     Called when failed to load ad
-     
-     インタースティシャル広告の準備に失敗した際に呼び出されます
-     */
-    func adstirInterstitial(interstitial: AdstirInterstitial, didFailToLoadWithError error: NSError) {
-        NSLog("広告の読み込みに失敗しました")
-        
-        // 15秒待ってから再読み込みします
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(15.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.statusLabel.text = "Loading...";
-            self.interstitial?.load()
-        })
-    }
-    /**
-     Called when interstitial ad is shown
-     
-     インタースティシャル広告が表示された際に呼び出されます
-     */
-    func adstirInterstitialDidShow(interstitial: AdstirInterstitial) {
-        NSLog("広告が表示されました")
+  // 広告の一時停止等
+  @Override
+  protected void onResume() {
+	  if(adstirInterstitial != null) adstirInterstitial.resume();
+	  super.onResume();
+  }
 
-        self.statusLabel.text = ""
-    }
-    /**
-     Called when failed to show ad
-     
-     インタースティシャル広告の表示に失敗した際に呼び出されます
-     */
-    func adstirInterstitial(interstitial: AdstirInterstitial, didFailToShowWithError error: NSError) {
-        NSLog("広告の表示に失敗しました")
+  @Override
+  protected void onPause() {
+	  if(adstirInterstitial != null) adstirInterstitial.pause();
+	  super.onPause();
+  }
 
-        // 15秒待ってから再読み込みします
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(15.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.statusLabel.text = "Loading...";
-            self.interstitial?.load()
-        })
-    }
-    /**
-     Called when ad was closed
-     
-     インタースティシャル広告が閉じられたときに呼び出されます
-     */
-    func adstirInterstitialDidClose(interstitial: AdstirInterstitial) {
-        NSLog("広告が閉じられました")
-        
-        // 15秒待ってから再読み込みします
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(15.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.statusLabel.text = "Loading...";
-            self.interstitial?.load()
-        })
-    }
-    
-    deinit {
-        self.interstitial?.delegate = nil
-        self.interstitial = nil
-    }
-
+  @Override
+  protected void onDestroy() {
+	  if(adstirInterstitial != null) adstirInterstitial.destroy();
+	  super.onDestroy();
+  }
 }
 ```
+
+## ライブラリ詳細
+
+[APIリファレンス](../api/index.md)をご覧ください。

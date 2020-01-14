@@ -48,24 +48,26 @@ nav:
     - 一覧: adstir/api/index.md
     - バナー:
       - AdstirMraidView: adstir/api/banner/AdstirMraidView-Class-Reference.md
-      - AdstirMraidViewDelegate: adstir/api/banner/AdstirMraidViewDelegate-Protocol-Reference.md
+      - AdSize: adstir/api/banner/AdSize-Class-Reference.md
+      - Listener: adstir/api/banner/Listener-Class-Reference.md
     - スワイプインタースティシャル:
       - AdstirFullscreenView: adstir/api/swipe/AdstirFullscreenView-Class-Reference.md
+      - AdstirFullscreenListener: adstir/api/swipe/AdstirFullscreenListener-Class-Reference.md
     - ネイティブ:
       - AdstirNativeAd: adstir/api/native/AdstirNativeAd-Class-Reference.md
-      - AdstirNativeAdDelegate: adstir/api/native/AdstirNativeAdDelegate-Protocol-Reference.md
+      - AdstirNativeAdListener: adstir/api/native/AdstirNativeAdListener-Interface-Reference.md
       - AdstirNativeAdResponse: adstir/api/native/AdstirNativeAdResponse-Class-Reference.md
-      - AdstirLoadImageDeledate: adstir/api/native/AdstirLoadImageDeledate-Protocol-Reference.md
-      - AdstirLoadSmallImageDeledate: adstir/api/native/AdstirLoadSmallImageDeledate-Protocol-Reference.md
+      - AdstirLoadImageListener: adstir/api/native/AdstirLoadImageListener-Interface-Reference.md
+      - AdstirLoadIconListener: adstir/api/native/AdstirLoadIconListener-Interface-Reference.md
       - ネイティブ動画:
         - AdstirNativeVideoAd: adstir/api/native/video/AdstirNativeVideoAd-Class-Reference.md
         - AdstirNativeVideoView: adstir/api/native/video/AdstirNativeVideoView-Class-Reference.md
-        - AdstirNativeVideoViewDelegate: adstir/api/native/video/AdstirNativeVideoViewDelegate-Protocol-Reference.md
+        - AdstirNativeVideoListener: adstir/api/native/video/AdstirNativeVideoListener-Interface-Reference.md
     - 動画リワード/全画面インタースティシャルの初期化:
       - AdstirVideoAds: adstir/api/AdstirVideoAds-Class-Reference.md
     - 動画リワード:
-      - AdstirVideoReward: adstir/api/video/AdstirVideoReward-Class-Reference.md
-      - AdstirVideoRewardDelegate: adstir/api/video/AdstirVideoRewardDelegate-Protocol-Reference.md
+      - AdstirVideoReward: adstir/api/reward/AdstirVideoReward-Class-Reference.md
+      - AdstirVideoRewardDelegate: adstir/api/reward/AdstirVideoRewardDelegate-Protocol-Reference.md
     - 全画面インタースティシャル:
       - AdstirInterstitial: adstir/api/interstitial/AdstirInterstitial-Class-Reference.md
       - AdstirInterstitialDelegate: adstir/api/interstitial/AdstirInterstitialDelegate-Protocol-Reference.md

@@ -2,131 +2,66 @@
 
 縦表示アプリに全画面で表示できる広告の導入方法です。
 
-## 1. adstir SDKをインポートします
+## 対応OS
 
-```objc
-@import AdstirAds;
+Android 4.4以上
+
+## 利用上の注意
+
+`縦画面表示かつ全画面で表示されるアプリでご利用を想定しています。表示されるレイアウトのサイズが小さい場合、正常に広告が表示されない可能性があります。`
+
+## 広告の設置
+
+以下のどちらかの方法で広告を設置してください。
+
+### レイアウトのXMLにて設置
+
+```xml
+<com.ad_stir.fullscreen.AdstirFullscreenView
+    media="メディアID"
+    spot="枠No"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
 ```
 
-## 2. スワイプインタースティシャル広告のインスタンスを生成します
+### Javaコードにて設置
 
-```objc
-AdstirFullscreenView *adView = [[AdstirFullscreenView alloc] initWithView:self.view media:@"メディアID" spot:枠No];
+1. スワイプインタースティシャル広告のインスタンスを生成
+1. リスナーを生成(オプション)
+1. スワイプインタースティシャルをレイアウトに配置
+
+#### 1. スワイプインタースティシャル広告のインスタンスを生成
+
+`AdstirFullscreenView`のインスタンスを生成します。
+
+```java
+AdstirFullscreenView view = new AdstirFullscreenView(
+    activity,
+    "メディアID",
+    枠No);
 ```
 
-## 3. スワイプインタースティシャル広告のデリゲートを設定します(オプション)
+#### 2. リスナーを生成(オプション)
 
-デリゲートをご利用される場合は、ページ下部の`広告の設置例`もご参考にしてください。
+スワイプインタースティシャル広告のリスナーを設定します。
 
-```objc
-adView.delegate = self;
-```
-
-## 4. スワイプインタースティシャル広告をviewに配置します
-
-```objc
-[self.view addSubview:adView];
-```
-
-## 5. スワイプインタースティシャル広告の読み込みを開始します
-
-スワイプインタースティシャル広告はバックグラウンドで読み込みを行えます。
-スワイプインタースティシャル広告を表示させる前に読み込みを行なっておくことをオススメします。
-
-```objc
-[adView start];
-```
-
-## 広告の設置例
-
-### Objective-C
-
-```objc
-#import "ViewController.h"
-@import AdstirAds;
-
-@interface ViewController () <AdstirMraidViewDelegate>
-
-@property (retain) AdstirFullscreenView *adstir;
-
-@end
-
-@implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    NSString *media = @"メディアID";
-    NSUInteger spot = 枠No;
-
-    // スワイプインタースティシャル広告のインスタンスを生成します
-    AdstirFullscreenView *adView = [[AdstirFullscreenView alloc] initWithView:self.view media:media spot:spot];
-
-    // スワイプインタースティシャル広告のデリゲートを設定します(オプション)
-    adView.delegate = self;
-
-    // スワイプインタースティシャル広告をViewに配置します
-    [self.view addSubview:adView];
-    self.adstir = adView;
-
-    // スワイプインタースティシャル広告の読み込みを開始します
-    [adView start];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc
-{
-    // デリゲートを解放します。解放を忘れるとクラッシュする可能性があります。
-    self.adstir.delegate = nil;
-    // 広告ビューを解放します。
-    self.adstir = nil;
-}
-
-// スワイプインタースティシャル広告のでDelegate(オプション)
-#pragma mark AdstirMraidViewDelegate methods
-
-- (void)adstirMraidViewWillLeaveApplication:(AdstirFullscreenView *)mraidView
-{
-    NSLog(@"広告がタップされてアプリから離れました");
-}
-
-@end
-```
-
-### Swift
-
-```objc
-import UIKit
-import AdstirAds
-
-class ViewController: UIViewController {
-    
-    var adView: AdstirFullscreenView? = nil
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let media = "メディアID";
-        let spot = 枠No;
-        
-        adView = AdstirFullscreenView(view: self.view, media: media, spot: UInt(spot))
-        
-        self.view.addSubview(adView!)
-        adView?.start()
-        
+```java
+view.setListener(new AdstirFullscreenView.AdstirFullscreenListener() {
+    @Override
+    public void onLeaveApplication(AdstirFullscreenView view){
+        // スワイプインタースティシャル広告をタップし、ユーザーがアプリケーションから離れた時に呼ばれます。
     }
+});
+```
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-}
+#### 3. スワイプインタースティシャル広告をレイアウトに配置
+
+スワイプインタースティシャル広告を表示するレイアウトに1.で作成したインスタンスを配置します。
+
+```java
+layout.addView(view);
 ```
 
 ## ライブラリ詳細
 
-[APIリファレンス](../api/index.md#スワイプインタースティシャル広告)をご覧ください。
+[APIリファレンス](../api/index.md)をご覧ください。
