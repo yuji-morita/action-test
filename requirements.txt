@@ -1,3 +1,4 @@
 mkdocs
 mkdocs-material
 GitPython
+mkdocs-markdownextradata-plugin

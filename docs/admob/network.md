@@ -4,7 +4,7 @@ adstirのAdMobパッケージには下記のアドネットワークのSDKがパ
 
 アドネットワーク|SDKバージョン|バナー|インタースティシャル|動画リワード|動画リワード(新API)|ネイティブ
 ---| :-: |:-:|:-:|:-:|:-:|:-:
-AdColony|4.1.2| o | o | o | o | -
+AdColony|{{ version.adcolony }}| o | o | o | o | -
 AppLovin|6.10.1| o | o | o | o | o
 Facebook|5.6.0| o | o | o | o | o
 maio    |1.5.1| - | o | o | o | -
