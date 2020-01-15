@@ -40,6 +40,7 @@ nav:
     - AdMob: 
         - はじめに: admob/index.md
         - AdMobメディエーション: admob/network.md
+        - よくある質問: admob/question.md
     - APS: 
         - APSの初期設定: aps/init.md
         - バナー: aps/banner.md
