@@ -93,9 +93,17 @@ extra_css:
 
 extra:
     language: 'jp'
-    macro_value: 100
     version:
       adcolony: 4.1.0
+      applovin: 9.10.5
+      facebook: 5.6.0
+      maio: 1.1.10
+      mopub: 5.10.0
+      nend: 5.3.0
+      tapjoy: 12.3.4
+      unityads: 3.3.0
+      fivead:
+
 
 markdown_extensions:
   - admonition

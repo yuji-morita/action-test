@@ -62,29 +62,8 @@ AdMobの実装ガイドをご覧ください
 * [ネイティブ](https://developers.google.com/admob/android/native/start?hl=ja)
 * [動画リワード](https://developers.google.com/admob/android/rewarded-ads?hl=ja)
 
+また、アドネットワークによっては追加で実装する必要がございます。 [追加実装](network#追加実装)をご覧になり、実装をお願いします。
 
-## 追加実装
-
-アドネットワークによっては追加実装が必要なネットワークがございます。下記を参照して実装をお願いします。
-
-### MoPubの追加実装
-広告の読み込み前にMoPub SDKを初期化する必要がございます。  
-MainActivityのonCreate等で`MoPub.initializeSdk()`を呼び出してください。  
-MOPUB_AD_UNIT_IDは営業担当よりおしらせします。  
-
-```java hl_lines="1 2 4 5 6 7 13 14"
-import com.mopub.common.MoPub;
-import com.mopub.common.SdkConfiguration;
-
-public class MainActivity extends AppCompatActivity {
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        SdkConfiguration sdkConfiguration =
-          new SdkConfiguration.Builder("MOPUB_AD_UNIT_ID").build();
-
-        MoPub.initializeSdk(context, sdkConfiguration, null);
-    }
-}
-```
+### テストデバイスの追加
+[開発時にはテスト端末を追加する](https://developers.google.com/admob/android/test-ads?hl=ja#add_your_test_device)より、広告リクエスト時にデバイスIDの設定をおこなってください。  
+こちらの設定をおこなった際には、アプリケーションのリリース前には該当コードの削除をお願いいたします。
