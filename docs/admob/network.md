@@ -10,7 +10,7 @@ Facebook|5.6.0| o | o | o | o | o
 maio    |1.5.1| - | o | o | o | -
 MoPub   |5.10.0| o | o | o | o | o
 nend    |5.3.0| o | o | o | o | - 
-TapJoy  |12.3.4| - | o | o | o | - 
+Tapjoy  |12.3.4| - | o | o | o | - 
 UnityAds|3.3.0| - | o | o | o | - 
 FiveAd[^1]|aaa| o | o | - | o | o
 
