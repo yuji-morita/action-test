@@ -773,8 +773,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cocoapodを利用している場合" class="md-nav__link">
-    CocoaPodを利用している場合
+  <a href="#android-studioで導入する場合" class="md-nav__link">
+    Android Studioで導入する場合
   </a>
   
 </li>
@@ -800,6 +800,26 @@
   <a href="#広告の実装" class="md-nav__link">
     広告の実装
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#追加実装" class="md-nav__link">
+    追加実装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mopubの追加実装" class="md-nav__link">
+    MoPubの追加実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1432,8 +1452,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cocoapodを利用している場合" class="md-nav__link">
-    CocoaPodを利用している場合
+  <a href="#android-studioで導入する場合" class="md-nav__link">
+    Android Studioで導入する場合
   </a>
   
 </li>
@@ -1462,6 +1482,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#追加実装" class="md-nav__link">
+    追加実装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mopubの追加実装" class="md-nav__link">
+    MoPubの追加実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1482,49 +1522,84 @@
                 <h1 id="admob広告について">AdMob広告について<a class="headerlink" href="#admob広告について" title="Permanent link">&para;</a></h1>
 <h2 id="前提条件">前提条件<a class="headerlink" href="#前提条件" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Xcode 10以上</li>
-<li>iOS 8.0以上</li>
+<li>Android Studio 3.2以上  </li>
+<li>minSdkVersion 14以上  </li>
+<li>compileSdkVersion 28以上  </li>
 </ul>
 <h2 id="事前準備">事前準備<a class="headerlink" href="#事前準備" title="Permanent link">&para;</a></h2>
-<p><a href="https://developers.google.com/admob/ios/quick-start?hl=ja">AdMobのスタートガイド</a>を参考に、AdMobの設定をおこなってください。</p>
+<p><a href="https://developers.google.com/admob/android/quick-start?hl=ja">AdMobのスタートガイド</a>を参考に、AdMobの設定をおこなってください。<br />
+Google Mobile Ads SDKは17.2.0以上をお使いください。</p>
 <h3 id="メディエーションの準備">メディエーションの準備<a class="headerlink" href="#メディエーションの準備" title="Permanent link">&para;</a></h3>
-<p>AdMobメディエーションを行うために、アドネットワークのSDKとアダプターをプロジェクトへ導入します。</p>
-<h4 id="cocoapodを利用している場合">CocoaPodを利用している場合<a class="headerlink" href="#cocoapodを利用している場合" title="Permanent link">&para;</a></h4>
-<p>Podfileへ下記のものを記述することで、adstirが利用するアドネットワークのSDKとアダプターを一括で導入することができます。</p>
-<div class="codehilite"><pre><span></span><span class="err">pod &#39;AdStir-Ads-SDK/AdMob-Package&#39;</span>
-</pre></div>
+<p><a href="https://developers.google.com/admob/android/mediate?hl=ja">AdMobメディエーション</a>を行うために、アドネットワークのSDKとアダプターをプロジェクトへ導入します。</p>
+<h4 id="android-studioで導入する場合">Android Studioで導入する場合<a class="headerlink" href="#android-studioで導入する場合" title="Permanent link">&para;</a></h4>
+<p>アプリケーションレベルのbuild.gradleにmavenリポジトリと依存関係を設定することで、adstirが利用するアドネットワークのSDKとアダプターを一括で導入することができます。</p>
+<div class="codehilite"><pre><span></span><span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;http://cdnp.ad-stir.com/m2&#39;</span> <span class="o">}</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://adcolony.bintray.com/AdColony&#39;</span> <span class="o">}</span> <span class="c1">// adcolony</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://github.com/glossom-dev/GlossomAds-Android/raw/master&#39;</span> <span class="o">}</span> <span class="c1">// adcolsa</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://imobile-maio.github.io/maven&#39;</span> <span class="o">}</span> <span class="c1">// maio</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;http://fan-adn.github.io/nendSDK-Android-lib/library&#39;</span> <span class="o">}</span> <span class="c1">// nend</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://s3.amazonaws.com/moat-sdk-builds&#39;</span> <span class="o">}</span> <span class="c1">// mopub</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://imobile.github.io/adnw-sdk-android&#39;</span> <span class="o">}</span> <span class="c1">// imobile</span>
+<span class="o">}</span>
+
+<span class="hll"><span class="n">dependencies</span> <span class="o">{</span>
+</span>    <span class="c1">// 利用するadstirのSDKバージョンを設定します</span>
+    <span class="kt">def</span> <span class="n">adstir_version</span> <span class="o">=</span> <span class="s2">&quot;x.x.x&quot;</span> 
+    <span class="n">implementation</span> <span class="s2">&quot;com.ad-stir.mediationadapter:admob-package:${adstir_version}&quot;</span>
+<span class="hll"><span class="o">}</span>
+</span></pre></div>
 
 <h4 id="手動で導入する場合">手動で導入する場合<a class="headerlink" href="#手動で導入する場合" title="Permanent link">&para;</a></h4>
 <ol>
-<li><a href="../adstir/init/manual_integration/#sdkの手動組み込み">こちら</a>を参考にadstirの動画パッケージを組み込む。</li>
-<li><a href="https://developers.google.com/admob/ios/quick-start?hl=ja#manual_download">AdMobのスタートガイド</a>を参考にGoogleMobileAds SDKを入れる </li>
+<li><a href="../adstir/init/manual_integration/#sdkの手動組み込み">こちら</a>を参考にadstirの動画パッケージを組み込む</li>
+<li><a href="https://developers.google.com/admob/android/quick-start?hl=ja#manual_download">AdMobのスタートガイド</a>を参考にGoogleMobileAds SDKを入れる </li>
 <li>adstir SDKにbundleされていないアドネットワークのSDKをダウンロードする<ul>
-<li><a href="https://origincache.facebook.com/developers/resources/?id=FBAudienceNetwork-5.6.0.zip">Facebook</a></li>
+<li><a href="https://origincache.facebook.com/developers/resources/?id=audience-network-sdk-5.6.0.zip">Facebook</a></li>
 </ul>
 </li>
 <li>AdMobメディエーションで利用できる各アドネットワークのアダプターをダウンロードする<ul>
-<li><a href="https://google.bintray.com/mobile-ads-adapters-ios/AdColonyAdapter/4.1.2.0/AdColonyAdapter-4.1.2.0.zip">AdColony</a></li>
-<li><a href="https://google.bintray.com/mobile-ads-adapters-ios/AppLovinAdapter/6.10.1.0/AppLovinAdapter-6.10.1.0.zip">AppLovin</a></li>
-<li><a href="https://google.bintray.com/mobile-ads-adapters-ios/FacebookAdapter/5.6.0.0/FacebookAdapter-5.6.0.0.zip">Facebook</a></li>
-<li><a href="https://google.bintray.com/mobile-ads-adapters-ios/MaioAdapter/1.5.1.0/MaioAdapter-1.5.1.0.zip">maio</a></li>
-<li><a href="https://google.bintray.com/mobile-ads-adapters-ios/MoPubAdapter/5.10.0.0/MoPubAdapter-5.10.0.0.zip">MoPub</a></li>
-<li><a href="https://google.bintray.com/mobile-ads-adapters-ios/NendAdapter/5.3.0.0/NendAdapter-5.3.0.0.zip">nend</a></li>
-<li><a href="https://google.bintray.com/mobile-ads-adapters-ios/TapjoyAdapter/12.3.4.0/TapjoyAdapter-12.3.4.0.zip">TapJoy</a></li>
-<li><a href="https://google.bintray.com/mobile-ads-adapters-ios/UnityAdapter/3.3.0.0/UnityAdapter-3.3.0.0.zip">UnityAds</a></li>
+<li><a href="https://google.bintray.com/mobile-ads-adapters-android/com/google/ads/mediation/adcolony/4.1.0.0/adcolony-4.1.0.0.aar">AdColony</a></li>
+<li><a href="https://google.bintray.com/mobile-ads-adapters-android/com/google/ads/mediation/applovin/9.10.5.0/applovin-9.10.5.0.aar">AppLovin</a></li>
+<li><a href="https://google.bintray.com/mobile-ads-adapters-android/com/google/ads/mediation/facebook/5.6.0.0/facebook-5.6.0.0.aar">Facebook</a></li>
+<li><a href="https://google.bintray.com/mobile-ads-adapters-android/com/google/ads/mediation/maio/1.1.10.0/maio-1.1.10.0.aar">maio</a></li>
+<li><a href="https://google.bintray.com/mobile-ads-adapters-android/com/google/ads/mediation/mopub/5.10.0.0/mopub-5.10.0.0.aar">MoPub</a></li>
+<li><a href="https://google.bintray.com/mobile-ads-adapters-android/com/google/ads/mediation/nend/5.3.0.0/nend-5.3.0.0.aar">nend</a></li>
+<li><a href="https://google.bintray.com/mobile-ads-adapters-android/com/google/ads/mediation/tapjoy/12.3.4.0/tapjoy-12.3.4.0.aar">Tapjoy</a></li>
+<li><a href="https://google.bintray.com/mobile-ads-adapters-android/com/google/ads/mediation/unity/3.3.0.0/unity-3.3.0.0.aar">UnityAds</a></li>
 </ul>
 </li>
-<li>ダウンロードしたzipファイルを解凍し、各frameworkをプロジェクトへ追加する。</li>
+<li>ダウンロードした各SDKをプロジェクトへ追加する</li>
 </ol>
 <h2 id="広告の実装">広告の実装<a class="headerlink" href="#広告の実装" title="Permanent link">&para;</a></h2>
 <p>AdMobの実装ガイドをご覧ください</p>
 <ul>
-<li><a href="https://developers.google.com/admob/ios/banner?hl=ja">バナー</a></li>
-<li><a href="https://developers.google.com/admob/ios/interstitial?hl=ja">インタースティシャル</a></li>
-<li><a href="https://developers.google.com/admob/ios/native/start?hl=ja">ネイティブ</a></li>
-<li><a href="https://developers.google.com/admob/ios/rewarded-ads?hl=ja">動画リワード</a></li>
+<li><a href="https://developers.google.com/admob/android/banner?hl=ja">バナー</a></li>
+<li><a href="https://developers.google.com/admob/android/interstitial?hl=ja">インタースティシャル</a></li>
+<li><a href="https://developers.google.com/admob/android/native/start?hl=ja">ネイティブ</a></li>
+<li><a href="https://developers.google.com/admob/android/rewarded-ads?hl=ja">動画リワード</a></li>
 </ul>
-<h1 id="追加実装">追加実装<a class="headerlink" href="#追加実装" title="Permanent link">&para;</a></h1>
-<p>アドネットワーク</p>
+<h2 id="追加実装">追加実装<a class="headerlink" href="#追加実装" title="Permanent link">&para;</a></h2>
+<p>アドネットワークによっては追加実装が必要なネットワークがございます。下記を参照して実装をお願いします。</p>
+<h3 id="mopubの追加実装">MoPubの追加実装<a class="headerlink" href="#mopubの追加実装" title="Permanent link">&para;</a></h3>
+<p>広告の読み込み前にMoPub SDKを初期化する必要がございます。<br />
+MainActivityのonCreate等で<code>MoPub.initializeSdk()</code>を呼び出してください。<br />
+MOPUB_AD_UNIT_IDは営業担当よりおしらせします。  </p>
+<div class="codehilite"><pre><span></span><span class="hll"><span class="kn">import</span> <span class="nn">com.mopub.common.MoPub</span><span class="p">;</span>
+</span><span class="hll"><span class="kn">import</span> <span class="nn">com.mopub.common.SdkConfiguration</span><span class="p">;</span>
+</span>
+<span class="hll"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="p">{</span>
+</span><span class="hll">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">        <span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+</span><span class="hll">        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span>
+</span>
+        <span class="n">SdkConfiguration</span> <span class="n">sdkConfiguration</span> <span class="o">=</span>
+          <span class="k">new</span> <span class="n">SdkConfiguration</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="s">&quot;MOPUB_AD_UNIT_ID&quot;</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+
+        <span class="n">MoPub</span><span class="p">.</span><span class="na">initializeSdk</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">sdkConfiguration</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+<span class="hll">    <span class="p">}</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
                 
                   
                 
