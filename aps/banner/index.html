@@ -1487,12 +1487,12 @@
 <h2 id="apsバナーへのリクエストを行う">APSバナーへのリクエストを行う<a class="headerlink" href="#apsバナーへのリクエストを行う" title="Permanent link">&para;</a></h2>
 <h3 id="dtbadsizeのインスタンスを生成します"><code>DTBAdSize</code>のインスタンスを生成します<a class="headerlink" href="#dtbadsizeのインスタンスを生成します" title="Permanent link">&para;</a></h3>
 <p>広告サイズは実際に表示するバナー広告のサイズを、<code>YOUR_SLOT_UUID</code>には営業担当がお知らせしたIDを入力してください。</p>
-<div class="codehilite"><pre><span></span><span class="n">DTBAdSize</span> <span class="o">*</span><span class="n">size</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DTBAdSize</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initBannerAdSizeWithWidth</span><span class="err">：</span><span class="mi">320</span> <span class="n">height</span><span class="err">：</span><span class="mi">50</span> <span class="n">andSlotUUID</span><span class="err">：</span><span class="s">@&quot;YOUR_SLOT_UUID&quot;</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="n">DTBAdSize</span> <span class="n">adSize</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DTBAdSize</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&quot;YOUR_SLOT_UUID&quot;</span><span class="p">);</span>
 </pre></div>
 
 <h3 id="dtbadloaderのインスタンスを生成しdtbadsizeを設定する"><code>DTBAdLoader</code>のインスタンスを生成し、<code>DTBAdSize</code>を設定する<a class="headerlink" href="#dtbadloaderのインスタンスを生成しdtbadsizeを設定する" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">DTBAdLoader</span> <span class="o">*</span><span class="n">adLoader</span> <span class="o">=</span> <span class="p">[</span><span class="n">DTBAdLoader</span> <span class="n">new</span><span class="p">];</span>
-<span class="p">[</span><span class="n">adLoader</span> <span class="n">setSizes</span><span class="err">：</span><span class="n">size</span><span class="err">、</span><span class="nb">nil</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">DTBAdRequest</span> <span class="n">adLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DTBAdRequest</span><span class="p">();</span>
+<span class="n">adLoader</span><span class="p">.</span><span class="na">setSizes</span><span class="p">(</span><span class="n">adSize</span><span class="p">);</span>
 </pre></div>
 
 <h3 id="apsの入札リクエストを行う">APSの入札リクエストを行う<a class="headerlink" href="#apsの入札リクエストを行う" title="Permanent link">&para;</a></h3>
