@@ -24,8 +24,8 @@ adLoader.setSizes(adSize);
 
 loadAdを呼び出して入札リクエストを行います。
 
-```
-[adLoader loadAd：self];
+```java
+
 ```
 
 ### `DTBAdCallback`の実装を行う
