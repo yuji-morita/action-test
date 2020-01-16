@@ -9,16 +9,15 @@
 
 広告サイズは実際に表示するバナー広告のサイズを、`YOUR_SLOT_UUID`には営業担当がお知らせしたIDを入力してください。
     
-```
-DTBAdSize *size = [[DTBAdSize alloc] initBannerAdSizeWithWidth：320 height：50 andSlotUUID：@"YOUR_SLOT_UUID"];
+```java
+DTBAdSize adSize = new DTBAdSize(320, 50, "YOUR_SLOT_UUID");
 ```
 
 ### `DTBAdLoader`のインスタンスを生成し、`DTBAdSize`を設定する
 
-
-```
-DTBAdLoader *adLoader = [DTBAdLoader new];
-[adLoader setSizes：size、nil];
+```java
+final DTBAdRequest adLoader = new DTBAdRequest();
+adLoader.setSizes(adSize);
 ```
 
 ### APSの入札リクエストを行う

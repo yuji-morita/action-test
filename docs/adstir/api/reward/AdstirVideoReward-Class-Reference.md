@@ -62,7 +62,7 @@ public static void setMediaUserID(String userId)
 
 ### setAdstirVideoRewardListener
 リスナーを設定します。広告の読み込み時、リワードの取得時に実行する処理などを指定することが出来ます。  
-AdstirVideoRewardListenerの詳細については[こちら](AdstirNativeVideoListener-Interface-Reference.md)をご覧ください。
+AdstirVideoRewardListenerの詳細については[こちら](AdstirVideoRewardListener-Interface-Reference.md)をご覧ください。
 
 ```java
 public void setAdstirVideoRewardListener(AdstirVideoRewardListener listener)
